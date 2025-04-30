@@ -4,6 +4,8 @@
     margin: 0;
     padding: 2rem;
     font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 #logo {
