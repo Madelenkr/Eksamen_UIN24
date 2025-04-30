@@ -8,11 +8,12 @@ export default function Dashboard() {
   
         <form action="action.page" method="post">
           <section>
-            <label htmlFor="email">E-post</label>
-            <input type="email"name="email" id="email" placeholder="eksempel@gmail.com"  required/>
+            <label htmlFor="bruker">Bruker Navn</label>
+            <input type="brukernavn"name="bruker navn" id="bruker navn" placeholder="Johan"  required/>
+            
   
             <label htmlFor="password">Passord</label>
-            <input type="password"name="password" id="password" required/>
+            <input type="password"name="password" id="password" placeholder="Johan1234" required/>
           </section>
   
           <button type="submit">Logg inn</button>
