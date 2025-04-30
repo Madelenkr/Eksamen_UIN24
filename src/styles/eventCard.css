@@ -1,0 +1,27 @@
+.festival-image {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 400px;
+  }
+
+  .event-link {
+    text-decoration: none;
+    border: purple solid 10px;
+    border-radius: 30px;
+    background-color: purple;
+    color: white;
+  }
