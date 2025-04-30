@@ -1,5 +1,6 @@
 import EventPage from './EventPage';
 import { useState, useEffect } from 'react';
+import Layout from './Layout';
 
 export default function Home() {
   const [attraction, setAttraction] = useState([]);
@@ -19,12 +20,13 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
+    <Layout>
       <section>
         {attraction?.map((festival) => (
           <EventPage festival={festival} key={festival.id} />
         ))}
       </section>
+      </Layout>
     </>
   );
 }

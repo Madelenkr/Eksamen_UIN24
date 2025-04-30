@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+
 export default function Layout({ children }) {
     return (
         <>
             <header>
+            <Link to="/" id="logo">BillettLyst</Link>
                 <nav>
                     <ul>
                         <li><Link to="/">Hjem</Link></li>
