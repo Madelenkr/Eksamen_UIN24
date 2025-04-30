@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "../styles/dashboard.css"; // Importer CSS-modulen
+import Layout from './Layout';
 
 export default function Dashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,6 +12,7 @@ export default function Dashboard() {
   };
 
   return (
+    <Layout>
     <main>
       {!isLoggedIn ? ( 
         <>
@@ -55,5 +58,6 @@ export default function Dashboard() {
         </section>
       )}
     </main>
+    </Layout>
   );
 }

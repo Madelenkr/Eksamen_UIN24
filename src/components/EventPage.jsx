@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //Henter parametere fra URLen
+import Layout from "./Layout";
+import "../styles/eventPage.css"; // Importer CSS-modulen
 
 export default function EventPage() {
 const { id } = useParams(); //Henter id fra URLen
@@ -16,8 +18,10 @@ const [ attraction, setAttraction ] = useState([]); //Statevariabel for å lagre
 
   return (
     <>
+    <Layout>
       <h1>{attraction?.name}</h1>
         <p>{attraction?.info}</p>
+    </Layout>
     </>
   );
 }
