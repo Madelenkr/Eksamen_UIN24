@@ -8,12 +8,12 @@ export default function Layout({ children }) {
             <Link to="/" id="logo">BillettLyst</Link>
                 <nav>
                     <ul>
-                        <li><Link to="/">Hjem</Link></li>
-                        <li><Link to="Dashboard/">Min side</Link></li>
-                        <li><Link to="EventPage/">Arrangementer</Link></li>
-                        <li><Link to="CategoryPage/">Kategori</Link></li>
+                        <li><Link to="CategoryPage/">Musikk</Link></li>
+                        <li><Link to="CategoryPage/">Sport</Link></li>
+                        <li><Link to="CategoryPage">Teater/Show</Link></li>
                     </ul>
                 </nav>
+            <Link to="Dashboard/" id="logg">Logg inn</Link>
             </header>
             <main>
                 {children}
