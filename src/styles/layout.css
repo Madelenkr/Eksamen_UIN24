@@ -23,18 +23,19 @@ header {
 
 nav ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
 }
  nav a {
     text-decoration: none;
     color: black;
     text-align: center;
+    padding: 10px;
 
  }
 
  nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
  }
 
  #logg {
