@@ -2,6 +2,7 @@ import EventCard from './EventCard';
 import EventPage from './EventPage';
 import { useState, useEffect } from 'react';
 import Layout from './Layout';
+import "../styles/home.css"; // Importer CSS-modulen
 
 export default function Home() {
   const [attraction, setAttraction] = useState([]);
