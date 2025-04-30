@@ -1,3 +1,4 @@
+
 .festival-image {
     width: 400px;
     height: auto;
@@ -20,7 +21,7 @@
 
   .event-link {
     text-decoration: none;
-    border: purple solid 10px;
+    border: purple solid 17px;
     border-radius: 30px;
     background-color: purple;
     color: white;
