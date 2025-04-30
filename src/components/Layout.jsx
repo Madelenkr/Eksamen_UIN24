@@ -8,9 +8,9 @@ export default function Layout({ children }) {
             <Link to="/" id="logo">BillettLyst</Link>
                 <nav>
                     <ul>
-                        <li><Link to="CategoryPage/">Musikk</Link></li>
-                        <li><Link to="CategoryPage/">Sport</Link></li>
-                        <li><Link to="CategoryPage">Teater/Show</Link></li>
+                        <li><Link to="/category/musikk">Musikk</Link></li>
+                        <li><Link to="/category/sport">Sport</Link></li>
+                        <li><Link to="/category/teather-show">Teater/Show</Link></li>
                     </ul>
                 </nav>
             <Link to="Dashboard/" id="logg">Logg inn</Link>
