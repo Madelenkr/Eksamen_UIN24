@@ -1,3 +1,4 @@
+import EventCard from './EventCard';
 import EventPage from './EventPage';
 import { useState, useEffect } from 'react';
 import Layout from './Layout';
@@ -23,7 +24,7 @@ export default function Home() {
     <Layout>
       <section>
         {attraction?.map((festival) => (
-          <EventPage festival={festival} key={festival.id} />
+          <EventCard festival={festival} key={festival.id} />
         ))}
       </section>
       </Layout>
