@@ -28,3 +28,9 @@ nav ul {
     flex-direction: row;
     justify-content: space-evenly;
  }
+
+ #logg {
+    text-decoration: none;
+    color: black;
+    text-align: right;
+ }
