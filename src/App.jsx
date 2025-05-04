@@ -5,6 +5,7 @@ import EventPage from './components/EventPage'
 import EventCard from './components/EventCard'
 import CategoryPage from './components/CategoryPage'
 import Dashboard from './components/Dashboard'
+import ArtistCard from './components/ArtistCard'
 
 function App() {
 

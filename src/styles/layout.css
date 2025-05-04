@@ -43,6 +43,7 @@ nav ul {
     text-decoration: none;
     color: black;
     text-align: right;
+    margin: 3rem;
  }
 
  /*Mobil versjonen - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/

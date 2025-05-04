@@ -19,8 +19,19 @@ const [ attraction, setAttraction ] = useState([]); //Statevariabel for å lagre
   return (
     <>
     <Layout>
+    <article>
+      {attraction?.map((pass) => {
+        const artists = pass._embedded?.attractions;
+        return (
+          <article>
+              <h2>{artists.name}</h2>
+          </article>
+        );
+      })}
+    </article>
       <h1>{attraction?.name}</h1>
         <p>{attraction?.info}</p>
+        <artistcard attraction={attraction}/>
     </Layout>
     </>
   );
