@@ -44,3 +44,17 @@ nav ul {
     color: black;
     text-align: right;
  }
+
+ /*Mobil versjonen - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
+ /*Dette vil kun gjelde skjermer som har max 600px*/
+ @media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        text-align: left;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+  }
