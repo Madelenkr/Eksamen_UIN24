@@ -6,8 +6,8 @@ import ArtistCard from "./ArtistCard";
 
 export default function EventPage() {
 const { id } = useParams(); //Henter id fra URLen
-const [ attraction, setAttraction ] = useState([]); //Statevariabel for å lagre data fra APIen
-const [ sanger, setArtists] = useState([]);
+const [ attraction, setAttraction ] = useState(null); //Statevariabel for å lagre data fra APIen
+const [ artists, setArtists] = useState([]);
 
   useEffect(() => {
         fetch(`https://app.ticketmaster.com/discovery/v2/attractions/${id}?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&id=K8vZ917K7fV,%20K8vZ917oWOV,%20K8vZ917_YJf,%20K8vZ917bJC7&locale=*`) //Hentet de 4 forskjellige API
@@ -19,39 +19,32 @@ const [ sanger, setArtists] = useState([]);
       }, [id]); //Legger til id som avhengighet for å oppdatere data når id endres
 
 
-      console.log(attraction)
+      console.log("attraction", attraction)
     
-      useEffect (() => {
-        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&keyword=findings&locale=*`)
+      const sanger = async () => {
+        fetch(`https://app.ticketmaster.com/discovery/v2/events.json?attractionId=${id}&locale=NO&apikey=AFEfcxa4XlCTGJA56Jk356h0NkfziiWD`)
         .then((response) => response.json())
-        .then((data) => setArtists(data._embedded?.attractions))
+        .then((data) => setArtists(data._embedded?.events))
         .catch((error) =>
         console.error("Feil under henting fra API", error)
       );
-      },[]);
+      }
+
+      useEffect(() => {
+        sanger();
+      }, [id]);
+
+      console.log("artister", artists)
 
   return (
     <>
-    <Layout>
     <article>
           <section>
-          {sanger?.map((pass) => (
-          <EventCard pass={pass} key={pass.id} />
-          ))};
-            </section>
-      {/*attraction?.map((pass) => {
-        const artists = pass._embedded?.attractions;
-        return (
-          <article>
-              <h2>{artists.name}</h2>
-          </article>
-        );
-      })*/}
+            <ArtistCard artists={artists}/>
+          </section>
     </article>
       <h1>{attraction?.name}</h1>
         <p>{attraction?.info}</p>
-        <ArtistCard attraction={attraction}/>
-    </Layout>
     </>
   );
 }

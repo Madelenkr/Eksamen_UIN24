@@ -23,13 +23,11 @@ export default function Home() {
 
   return (
     <>
-    <Layout>
       <section>
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
       </section>
-      </Layout>
     </>
   );
 }

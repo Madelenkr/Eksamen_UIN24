@@ -12,7 +12,6 @@ export default function Dashboard() {
   };
 
   return (
-    <Layout>
     <main>
       {!isLoggedIn ? ( 
         <>
@@ -58,6 +57,5 @@ export default function Dashboard() {
         </section>
       )}
     </main>
-    </Layout>
   );
 }

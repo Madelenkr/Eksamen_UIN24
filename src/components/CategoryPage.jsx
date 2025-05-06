@@ -8,9 +8,8 @@ export default function CategoryPage() {
 
   return (
     <>
-    <Layout>
       <h1>{newSlug}</h1>
-    </Layout>
+
     </>
   );
 }
