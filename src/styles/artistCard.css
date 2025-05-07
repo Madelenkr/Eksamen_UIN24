@@ -1,0 +1,25 @@
+
+article {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div {
+    padding: 1rem;
+}
+
+.artist-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .artist-card {
+    
+  }
+
+  .artist-name {
+  }

@@ -20,14 +20,14 @@ export default function ArtistCard({ artists }) {
   console.log("filterpushartist", filterPushArtist)
     
   return (
-    <>
+    <article className="artist-card">
         {filterPushArtist.map(artist => (
             <div key={artist.id}>
-                <img src={artist.images?.[0]?.url}/>
-                <h3>{artist?.name}</h3>
+                <img src={artist.images?.[0]?.url} className="artist-image"/>
+                <h3 className="artist-name">{artist?.name}</h3>
             </div>
         ))}
-    </>
+    </article> 
 );
   
 }
