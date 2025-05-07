@@ -14,15 +14,29 @@ body {
 main {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 section {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    padding-top: 70px;
+    flex-direction: column;
     flex-wrap: wrap;
+    padding-top: 40px;
 
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    font-size: 50px;
+}
+
+h2 {
+    display: flex;
+    font-size: 40px;
+    margin: 0;
+    justify-content: center;
 }
 
 article {

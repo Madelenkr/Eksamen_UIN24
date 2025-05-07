@@ -38,13 +38,13 @@ const [ artists, setArtists] = useState([]);
 
   return (
     <>
+    <h1>{attraction?.name}</h1>
+    <p>{attraction?.info}</p>
     <article>
           <section>
             <ArtistCard artists={artists}/>
           </section>
     </article>
-      <h1>{attraction?.name}</h1>
-        <p>{attraction?.info}</p>
     </>
   );
 }

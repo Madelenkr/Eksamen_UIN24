@@ -1,0 +1,25 @@
+.category-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+section {
+    display: flex;
+    flex-direction: row;
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+}
+
+.categoryCard {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    max-width: 400px;
+    max-height: fit-content;
+}
+
+p {
+    margin: 0;
+}
