@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/layout.css"; 
 
-export default function Layout({ children }) {
+export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
     return (
         <>
             <header>
@@ -13,7 +13,8 @@ export default function Layout({ children }) {
                         <li><Link to="/category/teater_show">Teater/Show</Link></li>
                     </ul>
                 </nav>
-            <Link to="/dashboard" id="logg">Logg inn</Link>
+                
+                    <Link to="/dashboard" id="logg">Logg inn</Link>
             </header>
             <main>
                 {children}

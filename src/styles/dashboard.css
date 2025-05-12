@@ -1,31 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
-
-#root {
-    margin: 0;
-    max-width: fit-content;
-}
-
-body {
-    margin: 0;
+.dashboard{
     display: flex;
-    justify-content: center;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
+.dashboard header{
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6e201b; /* Min side knapp så jeg har styr på det*/
 }
 
-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    padding-top: 70px;
-    flex-wrap: wrap;
+.dashboard title{
+    color: #6e201b;
+  
+}
+
+.dashboard-nav-list{
+  
+}
+.dashboard-nav-item{
+
+}
+.dashboard-nav-link{
+    
+}
+.dashboard nav-link:hover{
+    text-decoration: underline;
+}
+.logout-section{
+
+}
+.logout-button{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* LoginForm.jsx*/
+.login-section{
 
 }
 
-article {
-    font-family: 'Rubik', sans-serif;
+.login-form{
+
+}
+.login-button{
+   
+}
+.form-label{
+
+}
+.form-input{
+
+}
+
+.login-button{
+
+}
+
+
+.login-button:hover {
+
 }
 
