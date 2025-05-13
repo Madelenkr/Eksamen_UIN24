@@ -1,11 +1,10 @@
 
-.festival-image {
+.city-image {
     width: 350px;
     height: 200px;
-    object-fit: cover;
   }
 
-  .event-card {
+.city-card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -18,18 +17,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     max-width: 350px;
-  }
+}
 
-  .event-link {
-    text-decoration: none;
-    border: purple solid 17px;
-    border-radius: 30px;
-    background-color: purple;
-    color: white;
-  }
-
-  .event-card-h2 {
-    font-size: 30px;
+.city-card-h2 {
+    font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
