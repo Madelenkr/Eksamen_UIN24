@@ -44,6 +44,9 @@ export default function Home() {
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
+        <button onClick={() => setCity("Oslo")}>Oslo</button>
+        <button onClick={() => setCity("Stockholm")}>Stockholm</button>
+        <h1>I bynavn kan du oppleve:</h1>
         {pageContent?.map((fetchPlace) => (
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
