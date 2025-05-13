@@ -1,144 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
-.dashboard{
-   padding: 5%;
-   margin: 5%;
-   position: relative;
-   padding: 2 rem;
-   min-height: 100vh;
-   font-family: 'Rubik', sans-serif;
-}
-
-.dashboard-header{
-   margin: 0;
-   padding: 0;
-   display: flex;
-}
-
-.dashboard-title{
-display: flex;
-  font-weight: bold;
-  color: #000000;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-right: 30px;
-margin-top: -31.5rem;
-margin-left: -414.5px;
-                        }
-
-
-.dashboard-nav-liste{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    margin-top: 1rem;
-}
-.dashboard-nav-item{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
- 
-
-.dashboard nav-link:hover{
-    text-decoration: underline;
-}
-.logout-section{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 1rem;
-    margin-right: 0.5rem;
-
-}
-.logout-button{
-    background-color: #000000;
-    font-size: 0.9rem;
-    padding: 0.2rem 0.7rem;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    cursor: pointer;
-}
-
-
-/* LoginForm.jsx*/
-.login-section{
+#root {
     font-family: 'Rubik', sans-serif;
-
+    display: flex;
 }
-
-
-.login-form{
+.login-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    width: 100%;
-    max-width: 400px;
+    gap: 1rem;
+    align-items: center;  
+}
+    
+label.form-label {
+    font-size: 25px;
+    color: black;
+}
+input {
+    padding: 14px;
+    border-radius: 1rem;
+    width: 300px;
+    box-sizing: border-box;
+}
+.login-button {
+    background-color: purple;
+    color: #ffff;
+    padding: 1rem;
     margin: auto;
+    font-size: 17px;
+    border-radius: 1rem;
 }
-
-.form-label{
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-.login-button{
-    display: inline-block;
-    background-color: #000000;
-    font-size: 0.9rem;
-    padding: 0.2rem 0.7rem;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: auto;
-    max-width: fit-content;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    margin-bottom: 1rem;
-    margin-right: 0.5rem;
-   
-}
-.form-label{
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-
-}
-.form-input{
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-
-}
-
-.login-button{
-
-
-
-}
-
-
-.login-button:hover {
-    background-color: #333;
-}
-
-.Logg-inn-layout{
-}
-
