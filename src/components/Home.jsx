@@ -9,7 +9,7 @@ import CityCard from './CityCard';
 export default function Home() {
   const [attraction, setAttraction] = useState([]);
    const [pageContent, setPageContent] = useState ([]);
-    const [city, setCity] = useState([]);
+    const [city, setCity] = useState("Stockholm");
 
   useEffect(() => {
     const getData = async () => {
@@ -26,7 +26,7 @@ export default function Home() {
 
   useEffect (() => {
   const getCityEvents = async () => {
-        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&keyword=findings&locale=*&city=${city}&size=10`) //Hentet de 4 forskjellige API
+        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&locale=*&city=${city}&size=10`) //Hentet de 4 forskjellige API
           .then((response) => response.json()) //Omstrukturerer til json format.
           .then((data) => setPageContent(data._embedded.events)) //statevariabel 
           .catch((error) =>
