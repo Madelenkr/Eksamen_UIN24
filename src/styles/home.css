@@ -20,7 +20,6 @@ main {
 .section-home {
     display: flex;
     flex-direction: row;
-    justify-content: left;
     padding-top: 70px;
     flex-wrap: wrap;
 
@@ -40,12 +39,31 @@ article {
 .city-button {
     display: flex;
     justify-content: center;
-    max-height: 50px;
-    min-width: 100px;
+    margin: 40px;
+    max-height: 80px;
+    min-width: 130px;
     text-decoration: none;
     border: purple solid 17px;
     border-radius: 30px;
     background-color: purple;
     color: white;
     font-family: 'Rubik', sans-serif;
+}
+
+.home-button-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+
+.home-title-section {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
 }
