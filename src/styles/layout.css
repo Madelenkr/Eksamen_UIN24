@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
 }
 
 #logo {
@@ -19,11 +18,8 @@
 
 header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    max-width: 700px;
-
 }
 
 nav ul {
@@ -52,7 +48,7 @@ nav ul {
 
  /*Mobil versjonen - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
  /*Dette vil kun gjelde skjermer som har max 600px*/
- @media only screen and (max-width: 700px) {
+ @media only screen and (max-width: 600px) {
     nav ul {
         flex-direction: column;
         text-align: left;

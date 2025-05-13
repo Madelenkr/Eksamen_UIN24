@@ -22,7 +22,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 40px;
-    justify-content: center;
+
 }
 
 .category-attractions {
@@ -30,7 +30,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 40px;
-    justify-content: center;
+
 }
 
 .category-events {
@@ -38,7 +38,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 40px;
-    justify-content: center;
+
 }
 
 .categoryCard-venue {
