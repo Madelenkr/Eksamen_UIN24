@@ -7,12 +7,12 @@ export default function CityCard({fetchPlace}) {
         <article className="city-card">
             {imageUrl && <img src={imageUrl} alt={fetchPlace.name} className="city-image"/>}
             <h2 className="city-card-h2">{fetchPlace.name}</h2>
-            <p>{fetchPlace.dates?.start?.localDate}</p>
-            <p>{fetchPlace.dates?.start?.localTime}</p>
-            <p>{fetchPlace._embedded?.venues?.[0]?.name}</p>
-            <p>{fetchPlace._embedded?.venues?.[0]?.address?.line1}</p>
-            <p>{fetchPlace._embedded?.venues?.[0]?.location?.latitude}</p>
-            <p>{fetchPlace._embedded?.venues?.[0]?.location?.longitude}</p>
+            <section className="city-card-section">
+            <p>Dato: {fetchPlace.dates?.start?.localDate}</p>
+            <p>Tid: {fetchPlace.dates?.start?.localTime}</p>
+            <p>Plass: {fetchPlace._embedded?.venues?.[0]?.name}</p>
+            <p>Adresse: {fetchPlace._embedded?.venues?.[0]?.address?.line1}</p>
+            </section>
 
         </article>
     );

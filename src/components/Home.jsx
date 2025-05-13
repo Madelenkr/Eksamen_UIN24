@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <section>
+      <section >
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
@@ -54,7 +54,7 @@ export default function Home() {
         <section className='home-title-section'>
           <h1 className='city-title'>I {city} kan du oppleve:</h1>
         </section>
-        <section>
+        <section className='home-city-card-section'>
         {pageContent?.map((fetchPlace) => (
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
