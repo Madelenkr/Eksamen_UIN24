@@ -44,9 +44,11 @@ export default function Home() {
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
-        <button onClick={() => setCity("Oslo")}>Oslo</button>
-        <button onClick={() => setCity("Stockholm")}>Stockholm</button>
-        <h1>I bynavn kan du oppleve:</h1>
+        <button onClick={() => setCity("Oslo")} className='city-button'>Oslo</button>
+        <button onClick={() => setCity("Stockholm")} className='city-button'>Stockholm</button>
+        <button onClick={() => setCity("Madrid")} className='city-button'>Madrid</button>
+        <button onClick={() => setCity("Helsinki")} className='city-button'>Helsinki</button>
+        <h1 className='city-title'>I {city} kan du oppleve:</h1>
         {pageContent?.map((fetchPlace) => (
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
