@@ -5,7 +5,7 @@ import "../styles/dashboard.css"; // Importer CSS-modulen
 export default function DashboardView({ username, onLogout }) {
     return (
         <section className="dashboard">
-            <header className="dahsboard-header">
+            <header className="dashboard-header">
                 <h4 className="dashboard-title">Min side</h4>
             </header>
 
