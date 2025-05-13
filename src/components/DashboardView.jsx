@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/dashboard.css"; // Importer CSS-modulen
 
 
-export default function DashboardView({ username, onlogout }) {
+export default function DashboardView({ username, onLogout }) {
     return (
         <section className="dashboard">
             <header className="dahsboard-header">
@@ -18,7 +18,7 @@ export default function DashboardView({ username, onlogout }) {
             </ul>
             </nav>
         <section className="logout-section">
-            <button onClick={onlogout} className= "logout-button"> Logg ut</button>
+            <button onClick={onLogout} className= "logout-button"> Logg ut</button>
         </section>
         </section>
         
