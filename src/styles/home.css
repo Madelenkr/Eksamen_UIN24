@@ -46,7 +46,7 @@ article {
     border-radius: 9999px;
     border: 4px solid #e8ecf2;
     background-color: rgb(235, 235, 235);
-    color: #73787d;
+    color: black;
 
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8),
                 5px 5px 10px rgba(0, 0, 0, 0.25);
