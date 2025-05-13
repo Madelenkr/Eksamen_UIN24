@@ -17,9 +17,25 @@ main {
     flex-direction: column;
 }
 
-section {
+.category-venues {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+
+}
+
+.category-attractions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+
+}
+
+.category-events {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     padding-top: 40px;
 

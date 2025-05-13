@@ -9,6 +9,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-direction: row;
 }
 
 main {
@@ -16,7 +17,7 @@ main {
     flex-wrap: wrap;
 }
 
-section {
+.section-home {
     display: flex;
     flex-direction: row;
     justify-content: left;

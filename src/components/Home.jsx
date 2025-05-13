@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <section>
+      <section className='section-home'>
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}

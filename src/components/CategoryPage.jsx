@@ -71,14 +71,14 @@ export default function CategoryPage() {
       <h1>{newSlug}</h1>
 
       <h2>Arrangementer</h2>
-      <section>
+      <section className="category-events">
         {actualEvents.map(event => (
           <CategoryEvent event={event} key={event.id} />
         ))}
       </section>
 
       <h2>Attraksjoner</h2>
-      <section>
+      <section className="category-attractions">
         {attractions.length > 0 ? (
           attractions.map(attraction => (
             <CategoryAttraction event={attraction} key={attraction.id} />
@@ -89,7 +89,7 @@ export default function CategoryPage() {
       </section>
 
       <h2>Spillesteder</h2>
-      <section>
+      <section className="category-venues">
         {venues.map(venue => (
           <CategoryVenue venue={venue} key={venue.id} />
         ))}
