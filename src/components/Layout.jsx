@@ -13,9 +13,8 @@ export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
                         <li><Link to="/category/teater_show">Teater/Show</Link></li>
                     </ul>
                 </nav>
-                    {!isLoggedIn && (
                     <Link to="/dashboard" id="logg" className="Logg-inn-layout">Logg inn</Link>
-                    )}
+                    
             </header>
             <main>
                 {children}
