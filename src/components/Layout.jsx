@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../styles/layout.css"; 
 
 export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
@@ -13,11 +13,13 @@ export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
                         <li><Link to="/category/teater_show">Teater/Show</Link></li>
                     </ul>
                 </nav>
-                
+                    {!isLoggedIn && (
                     <Link to="/dashboard" id="logg">Logg inn</Link>
+                    )}
             </header>
             <main>
                 {children}
+                <Outlet/>
             </main>
             <footer>
                 <p></p>

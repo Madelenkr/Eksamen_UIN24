@@ -12,6 +12,11 @@ export default function Dashboard() {
     setUsername(name);
     setIsLoggedIn(true);
   };
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+  };
+
 
   return (
   
@@ -19,7 +24,7 @@ export default function Dashboard() {
     {!isLoggedIn ? (
       <LoginForm onLogin={handleLogin} />
     ) : (
-      <DashboardView username={username} />
+      <DashboardView username={username} onlogout={handleLogout}/>
     )}
   </>
   );

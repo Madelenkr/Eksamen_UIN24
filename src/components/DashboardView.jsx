@@ -6,7 +6,7 @@ export default function DashboardView({ username, onlogout }) {
     return (
         <section className="dashboard">
             <header className="dahsboard-header">
-                <h3 className="dashboard-title">Min side</h3>
+                <h4 className="dashboard-title">Min side</h4>
             </header>
 
 
@@ -17,9 +17,8 @@ export default function DashboardView({ username, onlogout }) {
                 <li className="dashboard-nav-item"><a href="#onskeliste" className="dashboard-nav-link">Min ønskeliste</a></li>
             </ul>
             </nav>
-            <section className="logout-section">
+        <section className="logout-section">
             <button onClick={onlogout} className= "logout-button"> Logg ut</button>
-
         </section>
         </section>
         
