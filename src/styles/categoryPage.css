@@ -41,6 +41,14 @@ main {
 
 }
 
+.categoryCard-venue {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    max-width: 200px;
+    max-height: fit-content;
+}
+
 h1 {
     display: flex;
     justify-content: center;
