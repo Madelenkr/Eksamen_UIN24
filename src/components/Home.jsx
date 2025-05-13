@@ -40,15 +40,21 @@ export default function Home() {
 
   return (
     <>
-      <section>
+      <section >
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
-        <button onClick={() => setCity("Oslo")} className='city-button'>Oslo</button>
-        <button onClick={() => setCity("Stockholm")} className='city-button'>Stockholm</button>
-        <button onClick={() => setCity("Madrid")} className='city-button'>Madrid</button>
-        <button onClick={() => setCity("Helsinki")} className='city-button'>Helsinki</button>
-        <h1 className='city-title'>I {city} kan du oppleve:</h1>
+      </section>
+        <section className='home-button-section'>
+          <button onClick={() => setCity("Oslo")} className='city-button'>Oslo</button>
+          <button onClick={() => setCity("Stockholm")} className='city-button'>Stockholm</button>
+          <button onClick={() => setCity("Madrid")} className='city-button'>Madrid</button>
+          <button onClick={() => setCity("Helsinki")} className='city-button'>Helsinki</button>
+        </section>
+        <section className='home-title-section'>
+          <h1 className='city-title'>I {city} kan du oppleve:</h1>
+        </section>
+        <section className='home-city-card-section'>
         {pageContent?.map((fetchPlace) => (
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
