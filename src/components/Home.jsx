@@ -7,6 +7,8 @@ import ArtistCard from './ArtistCard';
 
 export default function Home() {
   const [attraction, setAttraction] = useState([]);
+   const [pageContent, setPageContent] = useState ([]);
+    const [city, setCity] = useState("Oslo");
 
   useEffect(() => {
     const getData = async () => {
@@ -20,6 +22,20 @@ export default function Home() {
 
     getData();
   }, []);
+
+  useEffect (() => {
+  const getCityEvents = async () => {
+        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&keyword=findings&locale=*&city=${city}`) //Hentet de 4 forskjellige API
+          .then((response) => response.json()) //Omstrukturerer til json format.
+          .then((data) => setPageContent(data._embedded.events)) //statevariabel 
+          .catch((error) =>
+            console.error("feil under henting fra API", error) //Feilmelding
+          );
+      };
+
+    getCityEvents();
+  }, [city]); // Kjør på nytt når city endres
+
 
   return (
     <>
