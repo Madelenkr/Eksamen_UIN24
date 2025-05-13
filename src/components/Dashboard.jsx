@@ -4,16 +4,20 @@ import DashboardView from '../components/DashboardView';
 import "../styles/dashboard.css"; // Importer CSS-modulen
 import Layout from './Layout';  
 
-export default function Dashboard() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+export default function Dashboard({setIsLoggedIn}) {
   const [username, setUsername] = useState('');
+  const [isLoggedIn, setLocalIsLoggedIn] = useState(false);
+  
 
   const handleLogin = (name) => { //
     setUsername(name);
     setIsLoggedIn(true);
+    setLocalIsLoggedIn(true);
   };
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setLocalIsLoggedIn(false);
+
     setUsername('');
   };
 
@@ -24,7 +28,7 @@ export default function Dashboard() {
     {!isLoggedIn ? (
       <LoginForm onLogin={handleLogin} />
     ) : (
-      <DashboardView username={username} onlogout={handleLogout}/>
+      <DashboardView username={username} onLogout={handleLogout}/>
     )}
   </>
   );

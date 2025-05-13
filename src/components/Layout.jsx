@@ -14,7 +14,7 @@ export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
                     </ul>
                 </nav>
                     {!isLoggedIn && (
-                    <Link to="/dashboard" id="logg">Logg inn</Link>
+                    <Link to="/dashboard" id="logg" className="Logg-inn-layout">Logg inn</Link>
                     )}
             </header>
             <main>
