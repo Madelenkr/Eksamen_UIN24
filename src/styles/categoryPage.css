@@ -17,7 +17,35 @@ main {
     flex-direction: column;
 }
 
+<<<<<<< Updated upstream
 section {
+=======
+.category-venues {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.category-attractions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.category-events {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.categoryCard-venue {
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

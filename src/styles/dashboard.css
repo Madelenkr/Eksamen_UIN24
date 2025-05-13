@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+<<<<<<< Updated upstream
 
 #root {
     margin: 0;
@@ -29,3 +30,34 @@ article {
     font-family: 'Rubik', sans-serif;
 }
 
+=======
+#root {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;  
+}
+    
+label.form-label {
+    font-size: 25px;
+    color: black;
+}
+input {
+    padding: 14px;
+    border-radius: 1rem;
+    width: 300px;
+    box-sizing: border-box;
+}
+.login-button {
+    background-color: purple;
+    color: #ffff;
+    padding: 1rem;
+    margin: auto;
+    font-size: 17px;
+    border-radius: 1rem;
+}
+>>>>>>> Stashed changes

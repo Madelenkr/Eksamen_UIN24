@@ -12,17 +12,27 @@ function App() {
 
   return (
   <>
-    <Layout>
+   <Layout>
       <Routes>
+<<<<<<< Updated upstream
         <Route path="/" element={<Home />} />
         <Route path="event/:id" element={<EventPage />} />
         <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="dashboard" element={<Dashboard />} />
+=======
+        
+        <Route path="/" element={<Home />} />
+        <Route path="event/:id" element={<EventPage />} />
+        <Route path="/category/:slug" element={<CategoryPage />} />
+        <Route path="dashboard"element={<Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}/>
+        
+>>>>>>> Stashed changes
       </Routes>
-    </Layout>  
+      </Layout>
+    
   </>
   );
   
 }
 
-export default App
+export default App;

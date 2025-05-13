@@ -13,7 +13,13 @@ export default function Layout({ children }) {
                         <li><Link to="/category/teater_show">Teater/Show</Link></li>
                     </ul>
                 </nav>
+<<<<<<< Updated upstream
             <Link to="/dashboard" id="logg">Logg inn</Link>
+=======
+                    {!isLoggedIn && (
+                    <Link to="/dashboard" id="logg" className="Logg-inn-layout">Logg inn</Link>
+                    )}
+>>>>>>> Stashed changes
             </header>
             <main>
                 {children}
