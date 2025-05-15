@@ -10,6 +10,7 @@ export default function CategoryPage() {
   const [events, setEvents] = useState([]);
   const [attractions, setAttractions] = useState([]);
   const [venues, setVenues] = useState([]);
+  const [filterSearch, setFilterSearch] = useState("");
 
   const newSlug = slug.toUpperCase().replace("_", "/");
 
@@ -56,7 +57,7 @@ export default function CategoryPage() {
   );
 
   // Filtrering av venues
-  const venuesData = events
+  const venuesData = actualEvents
     .map(event => event._embedded?.venues || [])
     .flat()
     .filter((venue, index, self) =>
@@ -66,21 +67,43 @@ export default function CategoryPage() {
     setVenues(venuesData);
   }, [events]);
 
+  const filterEvents = events.filter(event => 
+    event.name?.toLowerCase().includes(filterSearch.toLowerCase())
+  )
+  const filterAttractions = attractions.filter(attraction => 
+    attraction.name?.toLowerCase().includes(filterSearch.toLowerCase())
+  )
+  const filterVenues = venues.filter(venue =>
+  venue.name?.toLowerCase().includes(filterSearch.toLowerCase())
+);
+
+console.log("venues", venues)
   return (
     <>
       <h1>{newSlug}</h1>
 
+      <input 
+        type="text"
+        placeholder="Søk her..."
+        value={filterSearch}
+        onChange={e => setFilterSearch(e.target.value)}
+      />
+
       <h2>Arrangementer</h2>
       <section className="category-events">
-        {actualEvents.map(event => (
-          <CategoryEvent event={event} key={event.id} />
-        ))}
+        {filterEvents.length > 0 ? (
+          filterEvents.map((event) => (
+            <CategoryEvent event={event} key={event.id} />
+          ))
+        ) : (
+          <p>Ingen arrangementer funnet.</p>
+        )}
       </section>
 
       <h2>Attraksjoner</h2>
       <section className="category-attractions">
-        {attractions.length > 0 ? (
-          attractions.map(attraction => (
+        {filterAttractions.length > 0 ? (
+          filterAttractions.map(attraction => (
             <CategoryAttraction event={attraction} key={attraction.id} />
           ))
         ) : (
@@ -90,9 +113,13 @@ export default function CategoryPage() {
 
       <h2>Spillesteder</h2>
       <section className="category-venues">
-        {venues.map(venue => (
-          <CategoryVenue venue={venue} key={venue.id} />
-        ))}
+        {filterVenues.length > 0 ? (
+          filterVenues.map(venue => (
+            <CategoryVenue venue={venue} key={venue.id} />
+          ))
+        ) : (
+          <p>Ingen spillesteder funnet.</p>
+        )}
       </section>
     </>
   );
