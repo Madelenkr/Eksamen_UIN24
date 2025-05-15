@@ -9,7 +9,7 @@ import CityCard from './CityCard';
 export default function Home() {
   const [attraction, setAttraction] = useState([]);
    const [pageContent, setPageContent] = useState ([]);
-    const [city, setCity] = useState("Stockholm");
+    const [city, setCity] = useState("Oslo");
 
   useEffect(() => {
     const getData = async () => {
