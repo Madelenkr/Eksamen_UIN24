@@ -50,6 +50,16 @@ nav ul {
     margin: 3rem;
  }
 
+ footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    margin-top: auto;
+    font-size: large;
+ }
+
  /*Mobil versjonen - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
  /*Dette vil kun gjelde skjermer som har max 600px*/
  @media only screen and (max-width: 700px) {
