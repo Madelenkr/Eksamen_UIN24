@@ -77,7 +77,6 @@ export default function CategoryPage() {
   venue.name?.toLowerCase().includes(filterSearch.toLowerCase())
 );
 
-console.log("venues", venues)
   return (
     <>
       <h1>{newSlug}</h1>
