@@ -1,3 +1,3 @@
-import {event} from '/event'
+import { event } from './event'
 
 export const schemaTypes = [event]
