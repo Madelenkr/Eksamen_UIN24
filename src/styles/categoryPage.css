@@ -49,6 +49,29 @@ main {
     max-height: fit-content;
 }
 
+.category-save-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.category-save-button:active,
+.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
 h1 {
     display: flex;
     justify-content: center;
