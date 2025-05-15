@@ -21,7 +21,7 @@ export default function Layout({ children, isLoggedIn, setIsLoggedIn }) {
                 <Outlet/>
             </main>
             <footer>
-                <p></p>
+                <p>Event data hentet fra <a href="https://www.ticketmaster.com">Ticketmaster</a> API</p>
             </footer>
         </>
     );

@@ -60,8 +60,7 @@ main {
     border-radius: 50%;
 }
 
-.category-save-button:active,
-.active {
+.category-save-button.saved {
     display: flex;
     justify-content: center;
     align-items: center;
