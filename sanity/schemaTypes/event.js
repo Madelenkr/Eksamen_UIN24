@@ -5,18 +5,14 @@ export const event = {
   fields: [
     {
       name: 'event',
-      title: 'Event Name',
+      title: 'Event title',
       type: 'string',
     },
     {
-      name: 'eventslug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'eventsname',
-        maxLength: 200,
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
-      },
+      name: 'apiId',
+      title: 'Ticketmaster API ID',
+      type: 'string',
+      description: 'ID til arrangementet hentet fra Ticketmaster sitt API',
     },
   ],
 }
