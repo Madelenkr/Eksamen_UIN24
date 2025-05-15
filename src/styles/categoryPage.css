@@ -51,24 +51,15 @@ main {
 
 .category-save-button {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
+    background: none;
+    border: none;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    padding: 0;
 }
 
-.category-save-button.saved {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+.heart-icon {
+  width: 24px;
+  height: 24px;
 }
 
 h1 {

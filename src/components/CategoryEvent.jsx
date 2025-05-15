@@ -41,7 +41,11 @@ export default function CategoryEvent({ event }) {
         className={`category-save-button ${saved ? "saved" : ""}`}
         onClick={handleSaveClick}
       >
-        {saved ? "" : ""}
+        <img
+          src={saved ? "/heartfull.png" : "/heartempty.png"}
+          alt={saved ? "Lagret" : "Lagre"}
+          className="heart-icon"
+        />
       </button>
       </article>
     );
