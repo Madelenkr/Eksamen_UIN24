@@ -17,7 +17,7 @@ export default function CategoryPage() {
   const slugTranslate = {
     musikk: "music",
     sport: "sports",
-    teater_show: "shows"
+    teater_show: "arts & theatre"
   };
   const translateSlug = slugTranslate[slug.toLowerCase()] || slug;
 
