@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //Henter parametere fra URLen
-import Layout from "./Layout";
 import "../styles/eventPage.css"; // Importer CSS-modulen
 import ArtistCard from "./ArtistCard";
 

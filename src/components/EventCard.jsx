@@ -1,5 +1,4 @@
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/eventCard.css"; // Importer CSS-modulen
 
 export default function EventCard({festival}) {
