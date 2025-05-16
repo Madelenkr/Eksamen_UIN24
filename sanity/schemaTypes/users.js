@@ -1,4 +1,4 @@
-export default {
+export const users = {
     name: 'user',
     title: 'Bruker',
     type: 'document',
