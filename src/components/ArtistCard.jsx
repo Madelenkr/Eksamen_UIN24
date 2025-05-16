@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+//Importerer CSS Styling for å få opp css på siden
 import "../styles/artistCard.css";
-export default function ArtistCard({ artists }) {
 
+//tar inn en prop kalt "artists"
+export default function ArtistCard({ artists }) {
+ // Lager en tom liste som skal holde på de unike artist.
   const filterPushArtist = [];
 
   artists?.map(artist => {
@@ -10,7 +12,7 @@ export default function ArtistCard({ artists }) {
     artister?.map(artist => {
       const alreadyInArray = filterPushArtist.find(a => a.id === artist.id)
 
-
+       // Hvis aikke rtisten eksisterer i arrayen fra før, legger den til.
       if(!alreadyInArray) {
         filterPushArtist.push(artist)
       }
