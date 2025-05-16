@@ -1,15 +1,23 @@
+// Importerer EventCard-komponenten for at den skal synes på Home siden
 import EventCard from './EventCard';
+// Impoterer useState og useEffect for at funksjonen skal fungere
 import { useState, useEffect } from 'react';
-import "../styles/home.css"; // Importer CSS-modulen
+//Importerer CSS Styling for å få opp css på siden
+import "../styles/home.css"; 
+// Importerer CityCard-komponenten som brukes til å vise steder per by
 import CityCard from './CityCard';
 
 export default function Home() {
+  //Lager satevariabler 
   const [attraction, setAttraction] = useState([]);
    const [pageContent, setPageContent] = useState ([]);
     const [city, setCity] = useState("Oslo");
 
-  useEffect(() => {
+   // useEffect kjører en gang etter at komponenten har rendret første gang
+    useEffect(() => {
+    // Lager en const og async 
     const getData = async () => {
+      // Henter attraksjoner fra Ticketmaster API
         fetch(`https://app.ticketmaster.com/discovery/v2/attractions?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&id=K8vZ917K7fV,%20K8vZ917oWOV,%20K8vZ917_YJf,%20K8vZ917bJC7&locale=*`) //Hentet de 4 forskjellige API
           .then((response) => response.json()) //Omstrukturerer til json format.
           .then((data) => setAttraction(data._embedded.attractions)) //statevariabel 
@@ -18,6 +26,7 @@ export default function Home() {
           );
       };
 
+  //Henter data når komponenten lastes inn
     getData();
   }, []);
 
@@ -58,7 +67,7 @@ export default function Home() {
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
       </section>
-      
+
     </>
   );
 }
