@@ -57,3 +57,50 @@ input:focus{
                 inset -2px -2px 5px rgba(255, 255, 255, 1),
                 inset 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.dashboard-title {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    font-size:2rem;
+    color: #000000;
+    cursor: pointer;
+}
+.dashboard-title:hover {
+    color: purple;
+    box-shadow: #92089a3c;
+    text-decoration: none;
+}
+.logout-button{
+    position: absolute;
+    font-size: 1.5rem;
+    top: 8%;
+    right: 3%;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+.logout-button:hover {
+    color: purple;
+    background-color:white ;
+    text-decoration: none;
+}
+.dashboard-nav-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    gap: 5%;
+}
+.dashboard-nav-item:hover {
+    color: purple;
+    box-shadow: #92089a3c;
+    text-decoration: none;
+}
+

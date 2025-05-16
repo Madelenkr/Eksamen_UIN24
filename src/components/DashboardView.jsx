@@ -1,7 +1,8 @@
-import "../styles/dashboard.css"; // Importer CSS-modulen
+import "../styles/dashboard.css"; 
 
 
 export default function DashboardView({ username, onlogout }) {
+  
     return (
         <section className="dashboard">
             <article>
@@ -16,9 +17,14 @@ export default function DashboardView({ username, onlogout }) {
                 <li className="dashboard-nav-item"><a href="#">Min ønskeliste</a></li>
             </ul>
             </nav>
-        <section className="logout-section">
-            <button onClick={onlogout} className= "logout-button"> Logg ut</button>
-        </section>
+            
+
+            <section className="logout-section">
+             <button onClick={onlogout} className= "logout-button"> Logg ut</button>
+            </section>
+
+
+
         </section>
         
     );
