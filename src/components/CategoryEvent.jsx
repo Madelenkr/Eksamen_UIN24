@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import "../styles/categoryStyle.css"; //import av CSS for styling
 
-
 // komponent for å vise eventer
 export default function CategoryEvent({ event }) {
     const [saved, setSaved] = useState(false); //state for å djekke om event er lagret
     const imageUrl = event.images?.[0]?.url; //Henter bilde fra API om det er tilgjengelig
-
 
     //kode for å lagre i localstorage har vært laget med hjelp av ChatGPT 
   const storageKey = "savedEvents"; //id for lagring (event.id)

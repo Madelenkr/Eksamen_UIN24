@@ -1,11 +1,7 @@
-// Importerer EventCard-komponenten for at den skal synes på Home siden
-import EventCard from './EventCard';
-// Impoterer useState og useEffect for at funksjonen skal fungere
-import { useState, useEffect } from 'react';
-//Importerer CSS Styling for å få opp css på siden
-import "../styles/home.css"; 
-// Importerer CityCard-komponenten som brukes til å vise steder per by
-import CityCard from './CityCard';
+import EventCard from './EventCard'; // Importerer EventCard-komponenten for at den skal synes på Home siden
+import { useState, useEffect } from 'react';// Impoterer useState og useEffect for at funksjonen skal fungere
+import "../styles/home.css"; //Importerer CSS Styling for å få opp css på siden
+import CityCard from './CityCard';// Importerer CityCard-komponenten som brukes til å vise steder per by
 
 export default function Home() {
   //Lager satevariabler 

@@ -2,7 +2,6 @@ import "../styles/categoryStyle.css"; //importering av CSS for styling
 
 //komponent for å visning av et spillested/venue
 export default function CategoryVenue({ venue }) {
-   
   
     return (
       <article className="categoryCard-venue"> {/*Kort for en venue*/}

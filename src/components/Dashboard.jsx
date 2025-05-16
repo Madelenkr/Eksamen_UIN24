@@ -6,7 +6,6 @@ import "../styles/dashboard.css"; // Importer CSS-modulen
 export default function Dashboard({setIsLoggedIn}) {
   const [username, setUsername] = useState('');
   const [isLoggedIn, setLocalIsLoggedIn] = useState(false);
-  
 
   const handleLogin = (name) => { //
     setUsername(name);
@@ -20,9 +19,7 @@ export default function Dashboard({setIsLoggedIn}) {
     setUsername('');
   };
 
-
   return (
-  
    <>
     {!isLoggedIn ? (
       <LoginForm onLogin={handleLogin} />

@@ -1,7 +1,5 @@
-// Importerer Link fra React Router for navigasjon og routes
-import { Link } from "react-router-dom";
-// Importerer CSS Styling for å få opp css på siden
-import "../styles/layout.css"; 
+import { Link } from "react-router-dom"; // Importerer Link fra React Router for navigasjon og routes
+import "../styles/layout.css"; // Importerer CSS Styling for å få opp css på siden
 
 //Definerer grunnstrukturen
 export default function Layout({ children}) {

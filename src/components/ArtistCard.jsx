@@ -1,5 +1,4 @@
-//Importerer CSS Styling for å få opp css på siden
-import "../styles/artistCard.css";
+import "../styles/artistCard.css"; //Importerer CSS Styling for å få opp css på siden
 
 //tar inn en prop kalt "artists"
 export default function ArtistCard({ artists }) {
