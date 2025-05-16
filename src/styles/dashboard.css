@@ -71,6 +71,8 @@ input:focus{
     color: purple;
     box-shadow: #92089a3c;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .logout-button{
     position: absolute;
@@ -88,6 +90,8 @@ input:focus{
     color: purple;
     background-color:white ;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dashboard-nav-item1 {
     display: flex;
