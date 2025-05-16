@@ -87,8 +87,8 @@ input:focus{
     font-weight: bold;
 }
 .logout-button:hover {
-    color: purple;
-    background-color:white ;
+    color: white;
+    background-color:purple;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -103,12 +103,10 @@ input:focus{
     background-color: white;
     cursor: pointer;
     text-decoration: none;
-   
-   
 }
-.dashboard-nav-item1:hover {
-    color: purple;
-    background-color:white ;
+.dashboard-nav-item1:hover a{
+    color: white;
+    background-color:purple;
     text-decoration: none;
     border-radius: 40px;
     padding: 0.5rem 1rem;
@@ -124,10 +122,11 @@ input:focus{
     background-color: white;
     cursor: pointer;
     text-decoration: none;
+
 }
-.dashboard-nav-item2:hover {
-    color: purple;
-    background-color:white ;
+.dashboard-nav-item2:hover a{
+    color: white;
+    background-color:purple;
     text-decoration: none;
     border-radius: 40px;
     padding: 0.5rem 1rem;
@@ -143,17 +142,13 @@ input:focus{
     color: #000000;
     background-color: white;
     cursor: pointer;
-    text-decoration: none;
 }
-.dashboard-nav-item3:hover {
-    color: purple;
-    background-color:white ;
+.dashboard-nav-item3:hover a{
+    color: white;
+    background-color:purple;
     text-decoration: none;
     border-radius: 40px;
     text-decoration: none;
-    box-shadow: #ffffff;
-    padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
-
 }
 
