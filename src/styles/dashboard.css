@@ -14,14 +14,14 @@ label.form-label {
     font-size: 25px;
     color: black;
 }
-input {
+.form-input {
     padding: 14px;
     border-radius: 99999px;
     width: 300px;
     box-sizing: border-box;
 }
 
-input:focus{
+.form-input:focus{
     padding: 14px;
     border-radius: 99999px;
     width: 300px;
