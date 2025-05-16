@@ -30,8 +30,11 @@ export default function Home() {
     getData();
   }, []);
 
+  // useEffect kjører en gang etter at komponenten har rendret første gang
   useEffect (() => {
+  // Lager en const og async 
   const getCityEvents = async () => {
+        // Henter attraksjoner fra Ticketmaster API
         fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&locale=*&city=${city}&size=10`) //Hentet de 4 forskjellige API
           .then((response) => response.json()) //Omstrukturerer til json format.
           .then((data) => setPageContent(data._embedded.events)) //statevariabel 
@@ -39,30 +42,34 @@ export default function Home() {
             console.error("feil under henting fra API", error) //Feilmelding
           );
       };
-
+  // Henter funksjonen for å hente byens arrangementer
     getCityEvents();
   }, [city]); // Kjør på nytt når city endres
 
 
   return (
     <>
-      <section >
+      <section> 
+          {/* filtererer over festival i 'attraction' arrayen */}
         {attraction?.map((festival) => (
+            // Viser en EventCard-komponent for hver festival
           <EventCard festival={festival} key={festival.id} />
         ))}
 
       </section>
+       {/* Knapper for å velge by*/}
         <section className='home-button-section'>
           <button onClick={() => setCity("Oslo")} className='city-button'>Oslo</button>
           <button onClick={() => setCity("Stockholm")} className='city-button'>Stockholm</button>
           <button onClick={() => setCity("Madrid")} className='city-button'>Madrid</button>
           <button onClick={() => setCity("Helsinki")} className='city-button'>Helsinki</button>
         </section>
-
+        {/* Tittel som oppdateres basert på valgt by */}
         <section className='home-title-section'>
           <h1 className='city-title'>I {city} kan du oppleve:</h1>
         </section>
         <section className='home-city-card-section'>
+        {/* filtererer over hentet arrangementer og viser en CityCard*/}
         {pageContent?.map((fetchPlace) => (
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
