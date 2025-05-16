@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LoginForm from '../components/LoginForm';
 import DashboardView from '../components/DashboardView';
 import "../styles/dashboard.css"; // Importer CSS-modulen
-import Layout from './Layout';  
 
 export default function Dashboard({setIsLoggedIn}) {
   const [username, setUsername] = useState('');
