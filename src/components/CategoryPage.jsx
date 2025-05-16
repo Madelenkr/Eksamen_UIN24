@@ -6,25 +6,26 @@ import CategoryVenue from "./CategoryVenue";
 import "../styles/categoryPage.css";
 
 export default function CategoryPage() {
-  const { slug } = useParams();
-  const [events, setEvents] = useState([]);
-  const [attractions, setAttractions] = useState([]);
-  const [venues, setVenues] = useState([]);
-  const [filterSearch, setFilterSearch] = useState("");
-  const [filterDate, setFilterDate] = useState("");
-  const [filterCountry, setFilterCountry] = useState("");
-  const [filterCity, setFilterCity] = useState("");
+  const { slug } = useParams(); 
+  const [events, setEvents] = useState([]); //usestate for event
+  const [attractions, setAttractions] = useState([]); //usestate for attractions
+  const [venues, setVenues] = useState([]); //usestate for venues
+  const [filterSearch, setFilterSearch] = useState(""); //usestate for søkefelt
+  const [filterDate, setFilterDate] = useState(""); //usestate for dato
+  const [filterCountry, setFilterCountry] = useState(""); //usestate for land
+  const [filterCity, setFilterCity] = useState(""); //usestate for by
 
-  const newSlug = slug.toUpperCase().replace("_", "/");
+  const newSlug = slug.toUpperCase().replace("_", "/"); //Sørger for at slug er lesbar i overskriften
 
+  //Oversetter norske slugs til engelske verdier som brukes i APIet
   const slugTranslate = {
     musikk: "music",
     sport: "sports",
     teater_show: "arts & theatre"
   };
-  const translateSlug = slugTranslate[slug.toLowerCase()] || slug;
+  const translateSlug = slugTranslate[slug.toLowerCase()] || slug; // Enten bruk oversettelse eller orginal slug
 
-  // Hent events
+  // Hent events fra ticketmaster api
   const getEvents = async () => {
         fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`) //Hentet de 4 forskjellige API
           .then((response) => response.json()) //Omstrukturerer til json format.
@@ -34,7 +35,7 @@ export default function CategoryPage() {
           );
       };
 
-  // Hent attractions
+  // Hent attractions fra ticketmaster api
   const getAttractions = async () => {
         fetch(`https:app.ticketmaster.com/discovery/v2/attractions.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`) //Hentet de 4 forskjellige API
           .then((response) => response.json()) //Omstrukturerer til json format.
@@ -44,12 +45,13 @@ export default function CategoryPage() {
           );
       };
 
+  //kjører getEvents og getAttractions når slug endres
   useEffect(() => {
     getEvents();
     getAttractions();
   }, [slug]);
 
-  // Filtrering av events
+  //Filtrering av events
   const actualEvents = events.filter(
     (event) =>
       event.dates?.start &&
@@ -60,19 +62,21 @@ export default function CategoryPage() {
       )
   );
 
-  // Filtrering av venues
+  //Filtrering av venues
   const venuesData = actualEvents
-    .map((event) => event._embedded?.venues || [])
+    .map((event) => event._embedded?.venues || []) //henter venues fra hvert event
     .flat()
     .filter(
       (venue, index, self) =>
-        venue && self.findIndex((v) => v.id === venue.id) === index
+        venue && self.findIndex((v) => v.id === venue.id) === index //fjerner duplikater basert på id
     );
 
+  //oppdaterer state for venues
   useEffect(() => {
     setVenues(venuesData);
   }, [events]);
 
+  //filtrerer events basert på søk, dato, land og by
   const filterEvents = events.filter((event) => {
     const nameMatch = event.name?.toLowerCase().includes(filterSearch.toLowerCase());
     const dateMatch = filterDate === "" || event.dates?.start?.localDate === filterDate;
@@ -94,18 +98,22 @@ export default function CategoryPage() {
     return nameMatch && dateMatch && countryMatch && cityMatch;
   });
 
+  //filtrerer attraksjoner basert på søketekst
   const filterAttractions = attractions.filter((attraction) =>
     attraction.name?.toLowerCase().includes(filterSearch.toLowerCase())
   );
 
+  //filtrerer spillesteder basert på søketeks
   const filterVenues = venues.filter((venue) =>
     venue.name?.toLowerCase().includes(filterSearch.toLowerCase())
   );
 
   return (
     <>
+      {/* Overskrift */}
       <h1>{newSlug}</h1>
 
+      {/* Filterseksjon */}
       <h2 className="filter-h2">Filtrert søk</h2>
       <section className="filter-section">
         <input className="filter-input"
@@ -127,6 +135,7 @@ export default function CategoryPage() {
         />
       </section>
 
+      {/* søkeseksjon */}
       <h2 className="search-h2">Søk</h2>
       <section className="search-section">
       <input className="search-input"
@@ -137,6 +146,7 @@ export default function CategoryPage() {
         />
         </section>
 
+      {/* Liste over arrangementer */}
       <h2>Arrangementer</h2>
       <section className="category-events">
         {filterEvents.length > 0 ? (
@@ -148,6 +158,7 @@ export default function CategoryPage() {
         )}
       </section>
 
+      {/* Liste over attraksjoner */}
       <h2>Attraksjoner</h2>
       <section className="category-attractions">
         {filterAttractions.length > 0 ? (
@@ -159,6 +170,7 @@ export default function CategoryPage() {
         )}
       </section>
 
+      {/* Liste over spillesteder */}
       <h2>Spillesteder</h2>
       <section className="category-venues">
         {filterVenues.length > 0 ? (
