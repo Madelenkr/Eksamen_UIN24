@@ -79,17 +79,16 @@ input:focus{
     font-size: 1.5rem;
     top: 8%;
     right: 3%;
-    border-radius: 5px;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     cursor: pointer;
     border: none;
     font-weight: bold;
 }
 .logout-button:hover {
     color: white;
-    background-color:purple;
-    text-decoration: none;
+    background-color:rgba(128, 0, 128, 0.868);
+    border-radius: 40px;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
