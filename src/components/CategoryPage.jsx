@@ -26,29 +26,23 @@ export default function CategoryPage() {
 
   // Hent events
   const getEvents = async () => {
-    try {
-      const response = await fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`
-      );
-      const data = await response.json();
-      setEvents(data._embedded?.events || []);
-    } catch (error) {
-      console.error("Feil under henting av events fra API", error);
-    }
-  };
+        fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`) //Hentet de 4 forskjellige API
+          .then((response) => response.json()) //Omstrukturerer til json format.
+          .then((data) => setEvents(data._embedded.events)) //statevariabel 
+          .catch((error) =>
+            console.error("feil under henting fra API", error) //Feilmelding
+          );
+      };
 
   // Hent attractions
   const getAttractions = async () => {
-    try {
-      const response = await fetch(
-        `https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`
-      );
-      const data = await response.json();
-      setAttractions(data._embedded?.attractions || []);
-    } catch (error) {
-      console.error("Feil under henting av attractions fra API", error);
-    }
-  };
+        fetch(`https:app.ticketmaster.com/discovery/v2/attractions.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2&classificationName=${translateSlug}&locale=*&size=20`) //Hentet de 4 forskjellige API
+          .then((response) => response.json()) //Omstrukturerer til json format.
+          .then((data) => setAttractions(data._embedded.attractions)) //statevariabel 
+          .catch((error) =>
+            console.error("feil under henting fra API", error) //Feilmelding
+          );
+      };
 
   useEffect(() => {
     getEvents();
