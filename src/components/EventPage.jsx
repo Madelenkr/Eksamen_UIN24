@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //Henter parametere fra URLen
 import "../styles/eventPage.css"; // Importer CSS-modulen
 import ArtistCard from "./ArtistCard";
+import Layout from "./Layout"; // Importer Layout inn i EventPage. Selvom den er gråa ut er den fortsatt i bruk og påvirker EventPage
 
 export default function EventPage() {
 const { id } = useParams(); //Henter id fra URLen
