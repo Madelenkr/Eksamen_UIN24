@@ -12,7 +12,7 @@ export default function LoginForm({ onLogin }) {
 
             <form className= "login-form" onSubmit={handleSubmit}>
                 <label htmlFor="username" className="form-label"> Brukernavn</label>
-                <input 
+                <input className='form-input'
                 type="text" 
                 name="username"
                 id="username" 
@@ -20,7 +20,7 @@ export default function LoginForm({ onLogin }) {
                 required/>
 
                 <label htmlFor="password" className="form-label"> Passord</label>
-                <input 
+                <input className='form-input'
                 type="password"  
                 id="password" 
                 required/>

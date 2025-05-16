@@ -84,7 +84,7 @@ article {
     display: flex;
     font-size: 30px;
     margin: 0;
-    justify-content: left;
+    justify-content: center;
     width: 100%;
     padding-bottom: 20px;
 }
@@ -93,7 +93,7 @@ article {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     width: 100%;
     padding: 0;
     padding-bottom: 20px;
@@ -101,7 +101,8 @@ article {
 
 .filter-input {
     display: flex;
-    border-radius: 0px;
+    width: 130px;
+    height: 20px;
 }
 
 .search-h2 {
@@ -109,7 +110,7 @@ article {
     font-size: 30px;
     margin: 0;
     width: 100%;
-    justify-content: left;
+    justify-content: center;
     padding-bottom: 20px;
 }
 
@@ -117,7 +118,7 @@ article {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     width: 100%;
     padding: 0;
     padding-bottom: 20px;
@@ -125,6 +126,9 @@ article {
 
 .search-input {
     display: flex;
-    width: 900px;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: large;
 }
 
