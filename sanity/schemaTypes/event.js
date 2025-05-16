@@ -15,4 +15,5 @@ export const event = {
       description: 'ID til arrangementet hentet fra Ticketmaster sitt API',
     },
   ],
+  
 }
