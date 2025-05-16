@@ -37,6 +37,15 @@ nav ul {
     padding: 10px;
 
  }
+ nav a:hover {
+    color: white;
+    background-color:purple;
+    cursor: pointer;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+ }
 
  nav {
     display: flex;
@@ -47,6 +56,16 @@ nav ul {
     color: black;
     text-align: right;
     margin: 3rem;
+ }
+
+ #logg:hover {
+    color: white;
+    background-color:purple;
+    cursor: pointer;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
  }
 
  footer {
