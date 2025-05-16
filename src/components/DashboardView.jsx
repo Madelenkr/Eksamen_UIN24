@@ -12,9 +12,9 @@ export default function DashboardView({ username, onlogout }) {
 
             <nav className="dashboard-nav" aria-label="Min navigasjon">
             <ul className="dashboard-nav-liste">
-                <li className="dashboard-nav-item"><a href="#">Venner</a></li>
-                <li className="dashboard-nav-item" ><a href="#">Min kjøp</a></li>
-                <li className="dashboard-nav-item"><a href="#">Min ønskeliste</a></li>
+                <li className="dashboard-nav-item1"><a href="#">Venner</a></li>
+                <li className="dashboard-nav-item2" ><a href="#">Min kjøp</a></li>
+                <li className="dashboard-nav-item3"><a href="#">Min ønskeliste</a></li>
             </ul>
             </nav>
             
