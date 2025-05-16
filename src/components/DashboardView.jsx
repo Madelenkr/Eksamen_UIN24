@@ -1,8 +1,11 @@
 import "../styles/dashboard.css"; 
+import {client} from "../sanity/client";
+import { useEffect, useState } from "react";
+
 
 
 export default function DashboardView({ username, onlogout }) {
-  
+   
     return (
         <section className="dashboard">
             <article>
