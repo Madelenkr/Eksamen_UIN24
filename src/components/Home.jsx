@@ -1,9 +1,6 @@
 import EventCard from './EventCard';
-import EventPage from './EventPage';
 import { useState, useEffect } from 'react';
-import Layout from './Layout';
 import "../styles/home.css"; // Importer CSS-modulen
-import ArtistCard from './ArtistCard';
 import CityCard from './CityCard';
 
 export default function Home() {
@@ -44,6 +41,7 @@ export default function Home() {
         {attraction?.map((festival) => (
           <EventCard festival={festival} key={festival.id} />
         ))}
+
       </section>
         <section className='home-button-section'>
           <button onClick={() => setCity("Oslo")} className='city-button'>Oslo</button>
@@ -51,6 +49,7 @@ export default function Home() {
           <button onClick={() => setCity("Madrid")} className='city-button'>Madrid</button>
           <button onClick={() => setCity("Helsinki")} className='city-button'>Helsinki</button>
         </section>
+
         <section className='home-title-section'>
           <h1 className='city-title'>I {city} kan du oppleve:</h1>
         </section>
@@ -59,7 +58,7 @@ export default function Home() {
           <CityCard fetchPlace={fetchPlace} key={fetchPlace.id} />
         ))}
       </section>
-
+      
     </>
   );
 }
