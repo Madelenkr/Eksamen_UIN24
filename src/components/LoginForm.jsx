@@ -12,20 +12,22 @@ export default function LoginForm({ onLogin }) {
 
             <form className= "login-form" onSubmit={handleSubmit}>
                 <label className="form-label">
-                     Brukernavn
                     <input className='form-input'
                     type="text" 
                     name="username"
                     id="username" 
+                    placeholder='Brukernavn'
+                    required
                     onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
 
                 <label className="form-label">
-                     Passord
                     <input className='form-input'
                     type="password"  
                     id="password" 
+                    placeholder='Passord'
+                    required
                     />
                 </label>
 

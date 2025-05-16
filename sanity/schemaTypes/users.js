@@ -20,7 +20,7 @@ export const users = {
             options: ['Mann', 'Kvinne', 'Annet'],
         },
         {
-            name: 'Age',
+            name: 'age',
             title: 'Alder',
             type: 'number',
         },

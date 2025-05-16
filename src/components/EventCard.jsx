@@ -7,7 +7,7 @@ export default function EventCard({festival}) {
 
     return (
         <article className="event-card"> {/* Kort for en festival */}
-        {imageUrl && <img src={imageUrl} alt={festival.name} className="festival-image"/>} {/* Bilde for festival (hvis det finnes) */}
+        {imageUrl && <img src={imageUrl} alt={festival.title} className="festival-image"/>} {/* Bilde for festival (hvis det finnes) */}
         <h2 className="event-card-h2">{festival.name}</h2>  {/* Navn på festival */}
         <Link to={`/event/${festival.id}`} className="event-link">Les mer {festival.name}</Link> {/* Link til mer informasjon om festival */}
       </article>

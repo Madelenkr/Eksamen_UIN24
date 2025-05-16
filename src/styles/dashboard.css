@@ -13,20 +13,29 @@
 label.form-label {
     font-size: 25px;
     color: black;
+    
 }
-.form-input {
+input {
     padding: 14px;
-    border-radius: 99999px;
+    border-radius: 40px;
     width: 300px;
     box-sizing: border-box;
+    margin-top: 1rem;
+    border: 2px solid #888;
+    text-align: center;
+
 }
 
-.form-input:focus{
+input:focus{
     padding: 14px;
     border-radius: 99999px;
     width: 300px;
+    outline: none;
     box-sizing: border-box;
-    outline: purple solid 4px;
+    border: 2px solid #7e22ce;
+    box-shadow: #7e22ce;
+    cursor: pointer;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .login-button {
@@ -35,33 +44,33 @@ label.form-label {
     margin: 40px;
     padding: 10px;
     min-width: 200px;
-    border-radius: 9999px;
+    border-radius: 40px;
     border: 4px solid #e8ecf2;
-    background-color: rgb(235, 235, 235);
+    background-color: #ebebeb;
     color: black;
-
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8),
-                5px 5px 10px rgba(0, 0, 0, 0.25);
 
     font-family: 'Rubik', sans-serif;
     font-size: 25px;
-    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
     text-decoration: none;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .login-button:hover {
-    color: purple;
-    box-shadow: -1px -1px 5px rgba(255, 255, 255, 0.6),
-                1px 1px 5px rgba(0, 0, 0, 0.3),
-                inset -2px -2px 5px rgba(255, 255, 255, 1),
-                inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+    background-color:purple;
+    border: none;
+    text-decoration: none;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.s ease, color 0.3s ease;
 }
 
 .dashboard-title {
-    display: flex;
     position: absolute;
-    top: 4%;
+    top: -1%;
     left: 3%;
     font-size:2rem;
     color: #000000;
@@ -76,8 +85,8 @@ label.form-label {
 }
 .logout-button{
     position: absolute;
-    font-size: 1.5rem;
-    top: 8%;
+    font-size: 2rem;
+    top: 3%;
     right: 3%;
     color: black;
     background-color: white;
@@ -87,7 +96,7 @@ label.form-label {
 }
 .logout-button:hover {
     color: white;
-    background-color:rgba(128, 0, 128, 0.868);
+    background-color:rgba(128, 0, 128, 0.842);
     border-radius: 40px;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -149,5 +158,62 @@ label.form-label {
     border-radius: 40px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.bruker-kort {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bruker-navn{
+    position: absolute;
+    top: 22%;
+    left: 4.5%;
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 1rem;
+}
+.bruker-profilbilde{
+    position: absolute;
+    top: 33%;
+    left: 3%;
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.bruker-alder{
+    position: absolute;
+    left: 3.5%;
+    font-size: 1.5rem;
+    bottom: 6.5%;
+    font-family: 'Rubik', sans-serif;
+    background-color: #f0f0f0;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.5rem;  
+    color: #333;   
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 165px;
+}
+.bruker-kjonn{
+    position: absolute;
+    left: 3.5%;
+    font-size: 1.5rem;
+    bottom: 1%;
+    font-family: 'Rubik', sans-serif;
+    background-color: #f0f0f0;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.5rem;  
+    color: #333;   
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 165px;
 }
 
