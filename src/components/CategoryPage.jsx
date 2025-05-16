@@ -112,13 +112,8 @@ export default function CategoryPage() {
     <>
       <h1>{newSlug}</h1>
 
-      <div className="filter-container">
-        <input
-          type="text"
-          placeholder="Søk etter navn..."
-          value={filterSearch}
-          onChange={(e) => setFilterSearch(e.target.value)}
-        />
+      <h2>Filtrert søk</h2>
+      <section className="filter-container">
         <input
           type="date"
           value={filterDate}
@@ -136,7 +131,17 @@ export default function CategoryPage() {
           value={filterCity}
           onChange={(e) => setFilterCity(e.target.value)}
         />
-      </div>
+      </section>
+
+      <h2>Søk</h2>
+      <section className="search-container">
+      <input
+          type="text"
+          placeholder="Søk her..."
+          value={filterSearch}
+          onChange={(e) => setFilterSearch(e.target.value)}
+        />
+        </section>
 
       <h2>Arrangementer</h2>
       <section className="category-events">
