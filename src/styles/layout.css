@@ -43,7 +43,6 @@ nav ul {
     cursor: pointer;
     border-radius: 40px;
     text-decoration: none;
-    padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
  }
 
@@ -56,6 +55,7 @@ nav ul {
     color: black;
     text-align: right;
     margin: 3rem;
+    padding: 10px;
  }
 
  #logg:hover {
@@ -64,7 +64,6 @@ nav ul {
     cursor: pointer;
     border-radius: 40px;
     text-decoration: none;
-    padding: 0.5rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
  }
 

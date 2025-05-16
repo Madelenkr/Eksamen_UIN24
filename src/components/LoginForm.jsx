@@ -11,21 +11,28 @@ export default function LoginForm({ onLogin }) {
         <section className="login-section">
 
             <form className= "login-form" onSubmit={handleSubmit}>
-                <label htmlFor="username" className="form-label"> Brukernavn</label>
-                <input 
-                type="text" 
-                name="username"
-                id="username" 
-                onChange={(e) => setUsername(e.target.value)}
-                required/>
+                <label className="form-label">
+                     Brukernavn
+                    <input className='form-input'
+                    type="text" 
+                    name="username"
+                    id="username" 
+                    onChange={(e) => setUsername(e.target.value)}
+                    />
+                </label>
 
-                <label htmlFor="password" className="form-label"> Passord</label>
-                <input 
-                type="password"  
-                id="password" 
-                required/>
-                <button type='submit' className= "login-button"> Logg inn</button>
+                <label className="form-label">
+                     Passord
+                    <input className='form-input'
+                    type="password"  
+                    id="password" 
+                    />
+                </label>
+
+                <button className= "login-button"> 
+                    Logg inn
+                </button>
             </form>
         </section>
     );
-}
+};
