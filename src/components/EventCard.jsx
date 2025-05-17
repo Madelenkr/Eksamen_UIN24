@@ -5,6 +5,7 @@ import "../styles/eventCard.css"; // Importer CSS for styling
 export default function EventCard({festival}) {
   const imageUrl = festival?.images?.[0]?.url; // Henter første bilde, hvis det finnes
 
+
     return (
         <article className="event-card"> {/* Kort for en festival */}
         {imageUrl && <img src={imageUrl} alt={festival.title} className="festival-image"/>} {/* Bilde for festival (hvis det finnes) */}

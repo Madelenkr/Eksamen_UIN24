@@ -1,14 +1,14 @@
 import "../styles/dashboard.css"; 
 import { client } from "../sanity/client";
 import { useEffect, useState } from "react";
-import EventCard from "./EventCard";
+import EventLink from "./EventLink";
 
 export default function DashboardView({ username, onLogout }) {
   const [users, setUsers] = useState([]);
   const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2";
   useEffect(() => {
     // GROQ-spørring:
-    const query = `*[_type == "user"]{name, age, gender, profileImage {asset -> }, wishlist[]->{title, apiId},previousPurchases[]->{title, apiId}}`;
+    const query = `*[_type == "user"]{name, age, gender, profileImage {asset -> }, wishlist[]->{event, apiId},previousPurchases[]->{event, apiId}}`;
     // Hent data fra Sanity
     client.fetch(query).then(async (userData) => {
         setUsers( await Promise.all (userData.map(async (user) => {
@@ -17,9 +17,9 @@ export default function DashboardView({ username, onLogout }) {
                 try{ 
                     const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events/${event.apiId}.json?apikey=${apiKey}`);
                     const data = await response.json();
-                    return {id: event.apiId, name: data.name, images: data.images ||[]};
+                    return {id: event.apiId, name: data.event, images: data.images ||[]};
                 }catch{
-                  return {id: event.apiId, name: event.title, images: []};
+                  return {id: event.apiId, name: event.event, images: []};
 
                 }
             }));
@@ -33,6 +33,7 @@ export default function DashboardView({ username, onLogout }) {
     );
 });
 }, []);
+
 
 
 
@@ -69,7 +70,7 @@ export default function DashboardView({ username, onLogout }) {
             <section className="onskelitse-seksjon">
               <section className="arrangmant-rad1">
                 {user.wishlist.map((event, j) => (
-                  <EventCard key={j} festival={event} />
+                  <EventLink key={j} festival={event} />
                 ))}
               </section>
             </section>
@@ -77,7 +78,7 @@ export default function DashboardView({ username, onLogout }) {
             <section className="kjop-seksjon">
               <section className="arrangment-rad2">
                 {user.previousPurchases.map((event, j) => (
-                  <EventCard key={j} festival={event} />
+                  <EventLink key={j} festival={event} />
                 ))}
               </section>
             </section>
