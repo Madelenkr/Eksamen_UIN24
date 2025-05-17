@@ -9,6 +9,11 @@ export const event = {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Beskrivelse',
+      type: 'text'
+    },
+    {
       name: 'apiId',
       title: 'Ticketmaster API ID',
       type: 'string',

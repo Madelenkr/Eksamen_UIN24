@@ -227,21 +227,28 @@ input:focus{
     flex-direction: column;
     position: absolute;
     top: 10%;
-    left: 33%;
+    left: 34%;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     background-color: transparent;
     border: none;
     
 }
-
+.event-description{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    line-height: 1.5;
+     color: black;
+     max-width: 50%;
+ 
+}
 .arrangmant-rad1{
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     background-color:transparent;
     border: none;
-    
 
 }
 
@@ -250,7 +257,7 @@ input:focus{
     flex-direction: column;
     position: absolute;
     top: 10%;
-    right: 33%;
+    right: 28%;
     align-items: center;
     margin-top: 1rem;
     background-color: transparent;
@@ -264,22 +271,8 @@ input:focus{
     margin-top: 1rem;
     background-color: transparent;
     border: none;
+    text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .arrangement-linke{
@@ -290,10 +283,7 @@ input:focus{
     display: flex;
     flex-direction: column;    
     align-items: flex-start;
-
-    list-style: none;
-    margin: margin;
-    
+    list-style: none;    
     width: fit-content;
     max-width: 100%;
     margin-bottom:1rem ;
@@ -307,5 +297,9 @@ input:focus{
 
 }
 .arrangement-kort{
+    display: flex;
+    text-align: center;
+    font-weight: lighter;
+   
 
 }

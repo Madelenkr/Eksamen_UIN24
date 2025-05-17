@@ -20,7 +20,7 @@ section {
     max-height: fit-content;
 }
 
-p {
+.bottom-text {
  margin: 0;
   position: absolute;
   border: none;

@@ -3,23 +3,30 @@ import { client } from "../sanity/client";
 import { useEffect, useState } from "react";
 import EventLink from "./EventLink";
 
+// Viser innholdet på brukers "Min side" etter innlogging
 export default function DashboardView({ username, onLogout }) {
   const [users, setUsers] = useState([]);
-  const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2";
+  const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2"; // Ticketmaster API-nøkkel
+
   useEffect(() => {
-    // GROQ-spørring:
-    const query = `*[_type == "user"]{name, age, gender, profileImage {asset -> }, wishlist[]->{event, apiId},previousPurchases[]->{event, apiId}}`;
-    // Hent data fra Sanity
+    // GROQ-spørring, som henter data fra sanity
+    const query = `*[_type == "user"]{name, age, gender, profileImage {asset -> }, wishlist[]->{event, apiId, description},previousPurchases[]->{event ,apiId, description}}`;
+
     client.fetch(query).then(async (userData) => {
+            // Mapper hver bruker og henter eventdata fra Ticketmaster for ønskeliste og kjøp
         setUsers( await Promise.all (userData.map(async (user) => {
             const fetchEvents = async (eventList) => 
             Promise.all((eventList || []).map(async (event) => {
+              //Med try-catch blok for å håndteree feil melding så vi ungår å stoppe koden eller få feil melding. 
                 try{ 
+                    // Henter eventdetaljer fra Ticketmaster API
                     const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events/${event.apiId}.json?apikey=${apiKey}`);
                     const data = await response.json();
-                    return {id: event.apiId, name: data.event, images: data.images ||[]};
+                    return {id: event.apiId, name: data.name || event.event, description: event.description, images: data.images ||[]};
                 }catch{
-                  return {id: event.apiId, name: event.event, images: []};
+                  
+                   // Hvis hentingen feiler, brukes data fra Sanity
+                  return {id: event.apiId, name: event.event, description: event.description , images: []};
 
                 }
             }));

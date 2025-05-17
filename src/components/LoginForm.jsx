@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 
+// Enkelt login-skjema med brukernavn og passord (passordet lagres ikke)
 export default function LoginForm({ onLogin }) {
     const [ username, setUsername] = useState('');
+    
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  // Hindrer sideoppdatering og sender brukernavn tilbake til parent-komponenten
+  const handleSubmit = (e) => {
+        e.preventDefault(); // Hindrer reload av siden
         onLogin(username);
     };
     return (
