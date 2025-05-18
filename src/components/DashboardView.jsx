@@ -3,7 +3,7 @@ import { client } from "../sanity/client";
 import { useEffect, useState } from "react";
 import EventLink from "./EventLink";
 
-// Viser innholdet på brukers "Min side" etter innlogging
+// Viser innholdet på siden etter innlogging
 export default function DashboardView({ username, onLogout }) {
   const [users, setUsers] = useState([]);
   const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2"; // Ticketmaster API-nøkkel
@@ -24,10 +24,8 @@ export default function DashboardView({ username, onLogout }) {
                     const data = await response.json();
                     return {id: event.apiId, name: data.name || event.event, description: event.description, images: data.images ||[]};
                 }catch{
-                  
-                   // Hvis hentingen feiler, brukes data fra Sanity
+                   // Hvis hentingen feiler, så brukes data fra Sanity
                   return {id: event.apiId, name: event.event, description: event.description , images: []};
-
                 }
             }));
             return {
