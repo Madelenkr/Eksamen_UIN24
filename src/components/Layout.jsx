@@ -25,7 +25,7 @@ export default function Layout({ children}) {
             </main>
             {/* Vises i bunnteksen*/}
             <footer>
-                <p className="bottom-text">Event data hentet fra <a href="https://www.ticketmaster.com">Ticketmaster</a> API</p>
+                <p className="footer-text">Event data hentet fra <a href="https://www.ticketmaster.com">Ticketmaster</a> API</p>
             </footer>
         </>
     );
