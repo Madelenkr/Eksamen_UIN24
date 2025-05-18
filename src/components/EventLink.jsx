@@ -5,7 +5,7 @@ export default function EventLink({ festival }) {
             <article className="event-info">
                 <h3>{festival.name}</h3>
                 <p className="event-description">{festival.description}</p>
-                <Link to={`/event/${festival.id}`} className="les-mer-lenke">
+                <Link to={`/sanity-event/${festival._id}`} className="les-mer-lenke">
                      Les mer
                  </Link>
             </article>
