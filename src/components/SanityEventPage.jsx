@@ -27,9 +27,9 @@ const [ event, setEvent ] = useState(null);
             <img src={event.images[0].url} alt={event.name} className="sanity-event-image"/>
             )}
             <h2 className="sanity-event-h2">{event?.name}</h2>
-            <p className="sanity-event-p">{event?.dates?.start?.localDate}</p>
-            <p className="sanity-event-p">{event?.classifications?.[0]?.genre?.name}</p>
-            <p className="sanity-event-p">{event?._embedded?.venues?.[0]?.name}</p>
+            <p className="sanity-event-p">Dato: {event?.dates?.start?.localDate}</p>
+            <p className="sanity-event-p">Tema: {event?.classifications?.[0]?.genre?.name}</p>
+            <p className="sanity-event-p">Plass: {event?._embedded?.venues?.[0]?.name}</p>
         </article>
     </section>
     </>

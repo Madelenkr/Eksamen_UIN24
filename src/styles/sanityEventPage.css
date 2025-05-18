@@ -1,0 +1,28 @@
+.sanity-event-section {
+  display: flex;
+  flex-direction: column;
+}   
+
+.sanity-event-article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.sanity-event-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+}
+
+.sanity-event-h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.sanity-event-p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
