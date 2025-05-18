@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //Henter parametere fra URLen 
+import "../styles/sanityEventPage.css"; // Importer CSS for styling
 import Layout from "./Layout"; // Importer Layout inn i EventPage. Selvom den er gråa ut er den fortsatt i bruk og påvirker EventPage
 
 //Hovedkomponenten for SanityEventPage
@@ -20,15 +21,15 @@ const [ event, setEvent ] = useState(null);
 
   return (
     <>
-    <section>
-        <article>
+    <section className="sanity-event-section">
+        <article className="sanity-event-article">
             {event && event.images && event.images.length > 0 && (
-            <img src={event.images[0].url} alt={event.name}/>
+            <img src={event.images[0].url} alt={event.name} className="sanity-event-image"/>
             )}
-            <h2>{event?.name}</h2>
-            <p>{event?.dates?.start?.localDate}</p>
-            <p>{event?.classifications?.[0]?.genre?.name}</p>
-            <p>{event?._embedded?.venues?.[0]?.name}</p>
+            <h2 className="sanity-event-h2">{event?.name}</h2>
+            <p className="sanity-event-p">{event?.dates?.start?.localDate}</p>
+            <p className="sanity-event-p">{event?.classifications?.[0]?.genre?.name}</p>
+            <p className="sanity-event-p">{event?._embedded?.venues?.[0]?.name}</p>
         </article>
     </section>
     </>
