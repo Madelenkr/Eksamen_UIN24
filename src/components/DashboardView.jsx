@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import EventLink from "./EventLink";
 
 // Viser innholdet på siden etter innlogging
-export default function DashboardView({ username, onLogout }) {
+export default function DashboardView({ onLogout }) {
   const [users, setUsers] = useState([]);
-  const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2"; // Ticketmaster API-nøkkel
 
   useEffect(() => {
     // GROQ-spørring, som henter data fra sanity
