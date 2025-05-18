@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-export default function EventLink({ festival }) {
+export default function EventLink({ event }) {
     return (
         <li className="event-li">
             <article className="event-info">
-                <h3>{festival.name}</h3>
-                <p className="event-description">{festival.description}</p>
-                <Link to={`/event/${festival.id}`} className="les-mer-lenke">
+                <h3>{event.name}</h3>
+                <p className="event-description">{event.description}</p>
+                <Link to={`/sanityEvent/${event.id}`} className="les-mer-lenke">
                      Les mer
                  </Link>
             </article>

@@ -59,13 +59,13 @@ export default function DashboardView({ onLogout }) {
             <section className="user-card-wishlist">
                 <h3 className="user-card-h3">Ønskeliste</h3>
                 {user.wishlist.map((event, j) => (
-                  <EventLink key={j} festival={event} />
+                  <EventLink key={j} event={event} />
                 ))}
             </section>
             <section className="user-card-purchases">
               <h3 className="user-card-h3">Kjøp</h3>
                 {user.previousPurchases.map((event, j) => (
-                  <EventLink key={j} festival={event} />
+                  <EventLink key={j} event={event} />
                 ))}
             </section>
           </article>
