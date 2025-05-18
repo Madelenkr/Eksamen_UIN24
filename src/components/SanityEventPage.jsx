@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //Henter parametere fra URLen 
-import "../styles/eventPage.css"; // Importer CSS for styling
 import Layout from "./Layout"; // Importer Layout inn i EventPage. Selvom den er gråa ut er den fortsatt i bruk og påvirker EventPage
 
 //Hovedkomponenten for SanityEventPage
