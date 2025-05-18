@@ -14,6 +14,11 @@ export const users = {
             type: 'string',
         },
         {
+            name: 'username',
+            title: 'Brukernavn',
+            type: 'string',
+        },
+        {
             name:'gender',
             title: 'Kjønn',
             type: 'string',
