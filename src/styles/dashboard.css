@@ -287,19 +287,14 @@ input:focus{
     width: fit-content;
     max-width: 100%;
     margin-bottom:1rem ;
-    
-
-
 }
 .les-mer-lenke{
     display: flex;
     flex-direction: column;
-
 }
 .arrangement-kort{
     display: flex;
     text-align: center;
     font-weight: lighter;
-   
-
+    width: fit-content;
 }
