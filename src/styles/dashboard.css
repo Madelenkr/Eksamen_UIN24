@@ -3,6 +3,7 @@
     font-family: 'Rubik', sans-serif;
     display: flex;
 }
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -82,225 +83,97 @@ input:focus{
     color: #000000;
     cursor: pointer;
 }
-.dashboard-title:hover {
-    color: purple;
-    box-shadow: #92089a3c;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+
 .logout-button{
     position: absolute;
-    font-size: 2rem;
-    top: 3%;
+    top: 2%;
     right: 3%;
-    width: 150px;
-    border-radius: 40px;
-    border: 4px solid #e8ecf2;
-    background-color: #ebebeb;
-    color: black;
-    cursor: pointer;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.logout-button:hover {
-    color: white;
-    background-color:rgba(128, 0, 128, 0.842);
-    border-radius: 40px;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.dashboard-nav-item1 {
-    display: flex;
-    position: absolute;
-    top: 25%;
-    right: 18%;
     font-size: 1.5rem;
     color: #000000;
-    background-color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-.dashboard-nav-item1:hover a{
-    color: white;
-    background-color:purple;
-    text-decoration: none;
-    border-radius: 40px;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.dashboard-nav-item2 {
-    display: flex;
-    position: absolute;
-    top: 25%;
-    right: 37%;
-    font-size: 1.5rem;
-    color: #000000;
-    background-color: white;
-    cursor: pointer;
-    text-decoration: none;
-
-}
-.dashboard-nav-item2:hover a{
-    color: white;
-    background-color:purple;
-    text-decoration: none;
-    border-radius: 40px;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-
-}
-.dashboard-nav-item3 {
-    display: flex;
-    position: absolute;
-    top: 25%;
-    right: 55%;
-    font-size: 1.5rem;
-    color: #000000;
-    background-color: white;
     cursor: pointer;
 }
-.dashboard-nav-item3:hover a{
-    color: white;
-    background-color:purple;
-    text-decoration: none;
-    border-radius: 40px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-
-.bruker-kort {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bruker-navn{
-    position: absolute;
-    top: 22%;
-    left: 4.5%;
-    font-size: 2rem;
-    color: #000000;
-    margin-top: 1rem;
-}
-.bruker-profilbilde{
-    position: absolute;
-    top: 33%;
-    left: 3%;
-    width: 250px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.bruker-alder{
-    position: absolute;
-    left: 3.5%;
-    font-size: 1.5rem;
-    bottom: 6.5%;
-    font-family: 'Rubik', sans-serif;
-    background-color: #f0f0f0;
-    border: 1px solid #d1d1d1;
-    border-radius: 0.5rem;  
-    color: #333;   
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    width: 165px;
-}
-.bruker-kjonn{
-    position: absolute;
-    left: 3.5%;
-    font-size: 1.5rem;
-    bottom: 1%;
-    font-family: 'Rubik', sans-serif;
-    background-color: #f0f0f0;
-    border: 1px solid #d1d1d1;
-    border-radius: 0.5rem;  
-    color: #333;   
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    width: 165px;
-}
-.onskelitse-seksjon{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 10%;
-    left: 34%;
-    align-items: center;
-    margin-top: 0.5rem;
-    background-color: transparent;
-    border: none;
-    
-}
-.event-description{
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    line-height: 1.5;
-     color: black;
-     max-width: 50%;
- 
-}
-.arrangmant-rad1{
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    background-color:transparent;
-    border: none;
-
-}
-
-.kjop-seksjon{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 10%;
-    right: 28%;
-    align-items: center;
-    margin-top: 1rem;
-    background-color: transparent;
-    border: none;
-}
-
-.arrangement-rad2{
+.dashboard {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 1rem;
-    background-color: transparent;
-    border: none;
-    text-align: center;
+    align-items: center;
 }
 
-
-.arrangement-linke{
-    list-style: none;
-    margin-top: 1rem;
-}
-.arrangement-kort {
+.dashboard-nav-item {
     display: flex;
-    flex-direction: column;    
-    align-items: flex-start;
-    list-style: none;    
-    width: fit-content;
-    max-width: 100%;
-    margin-bottom:1rem ;
+    flex-direction: row;
+    cursor: pointer;
+    text-decoration: none;
 }
-.les-mer-lenke{
+
+.user-list {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
-.arrangement-kort{
+
+.user-card {
     display: flex;
-    text-align: center;
-    font-weight: lighter;
-    width: fit-content;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.user-card-image {
+    height: 200px;
+    width: 800px;
+}
+
+.user-card-p {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.user-card-wishlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding: 0;
+}
+
+.user-card-purchases {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    padding: 0;
+}
+
+.user-card-h3 {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 27px;
+}
+
+.event-li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-info h3 {
+    padding: 10px;
+    margin: 0;
 }
