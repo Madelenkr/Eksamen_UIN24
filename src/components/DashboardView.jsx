@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import EventLink from "./EventLink";
 
 // Viser innholdet på siden etter innlogging
-export default function DashboardView({ username, onLogout }) {
+export default function DashboardView({ onLogout }) {
   const [users, setUsers] = useState([]);
-  const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2"; // Ticketmaster API-nøkkel
 
   useEffect(() => {
     // GROQ-spørring, som henter data fra sanity
@@ -20,7 +19,7 @@ export default function DashboardView({ username, onLogout }) {
               //Med try-catch blok for å håndteree feil melding så vi ungår å stoppe koden eller få feil melding. 
                 try{ 
                     // Henter eventdetaljer fra Ticketmaster API
-                    const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events/${event.apiId}.json?apikey=${apiKey}`);
+                    const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions/${event.apiId}.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2`);
                     const data = await response.json();
                     return {id: event.apiId, name: data.name || event.event, description: event.description, images: data.images ||[]};
                 }catch{
