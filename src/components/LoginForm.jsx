@@ -13,29 +13,33 @@ export default function LoginForm({ onLogin }) {
     return (
         <section className="login-section">
 
+            // {/* Skjemaet for innlogging, som kaller handleSubmit når det sendes */}
             <form className= "login-form" onSubmit={handleSubmit}>
+                {/*Overskrift*/}
                 <h2 className='login-h2'>Brukernavn</h2>
                 <label className="form-label">
                     <input className='form-input'
-                    type="text" 
-                    name="username"
-                    id="username" 
-                    placeholder='Brukernavn'
-                    required
-                    onChange={(e) => setUsername(e.target.value)}
+                        //Type er tekst
+                        type="text" 
+                        //Navn på input feltet, brukernavn
+                        name="username"
+                        //Vises når feltet er tomt
+                        placeholder='Brukernavn'
+                        // Setter brukernavn med onChange
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
 
                 <h2 className='login-h2'>Passord</h2>
                 <label className="form-label">
                     <input className='form-input'
-                    type="password"  
-                    id="password" 
-                    placeholder='Passord'
-                    required
+                        //Passordfelt
+                        type="password"  
+                        placeholder='Passord'
                     />
                 </label>
 
+                {/* Knapp for å sende skjemaet*/}
                 <button className= "login-button"> 
                     Logg inn
                 </button>
