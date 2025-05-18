@@ -68,6 +68,12 @@ input:focus{
     transition: background-color 0.s ease, color 0.3s ease;
 }
 
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dashboard-title {
     position: absolute;
     top: -1%;

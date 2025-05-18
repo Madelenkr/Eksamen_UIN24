@@ -14,8 +14,8 @@ export default function LoginForm({ onLogin }) {
         <section className="login-section">
 
             <form className= "login-form" onSubmit={handleSubmit}>
+                <h2 className='login-h2'>Brukernavn</h2>
                 <label className="form-label">
-                    Brukernavn
                     <input className='form-input'
                     type="text" 
                     name="username"
@@ -26,8 +26,8 @@ export default function LoginForm({ onLogin }) {
                     />
                 </label>
 
+                <h2 className='login-h2'>Passord</h2>
                 <label className="form-label">
-                    Passord
                     <input className='form-input'
                     type="password"  
                     id="password" 
