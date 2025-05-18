@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import EventLink from "./EventLink";
 
 // Viser innholdet på siden etter innlogging
-export default function DashboardView({ onLogout }) {
+export default function DashboardView({ username, onLogout }) {
   const [users, setUsers] = useState([]);
+  const apiKey = "QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2"; // Ticketmaster API-nøkkel
 
   useEffect(() => {
     // GROQ-spørring, som henter data fra sanity
@@ -16,16 +17,6 @@ export default function DashboardView({ onLogout }) {
         setUsers( await Promise.all (userData.map(async (user) => {
             const fetchEvents = async (eventList) => 
             Promise.all((eventList || []).map(async (event) => {
-<<<<<<< HEAD
-=======
-              //Med try-catch blok for å håndteree feil melding så vi ungår å stoppe koden eller få feil melding. 
-                try{ 
-                    // Henter eventdetaljer fra Ticketmaster API
-                    const response = await fetch(`https://app.ticketmaster.com/discovery/v2/attractions/${event.apiId}.json?apikey=QqvpEAdIbQPJB9GGqnSKAZvmpXwz79Y2`);
-                    const data = await response.json();
-                    return {id: event.apiId, name: data.name || event.event, description: event.description, images: data.images ||[]};
-                }catch{
->>>>>>> 736cddc347b6fd50869a5fd5b2412af5b7bbc082
                    // Hvis hentingen feiler, så brukes data fra Sanity
                   return {id: event.apiId, name: event.event, description: event.description , images: []};
             }));
@@ -50,38 +41,49 @@ export default function DashboardView({ onLogout }) {
       <article>
         <h3 className="dashboard-title">Min side</h3>
       </article>
+
       <nav className="dashboard-nav" aria-label="Min navigasjon">
         <ul className="dashboard-nav-liste">
-          <li className="dashboard-nav-item"><a href="#">Venner</a></li>
-          <li className="dashboard-nav-item"><a href="#">Min kjøp</a></li>
-          <li className="dashboard-nav-item"><a href="#">Min ønskeliste</a></li>
+          <li className="dashboard-nav-item1"><a href="#">Venner</a></li>
+          <li className="dashboard-nav-item2"><a href="#">Min kjøp</a></li>
+          <li className="dashboard-nav-item3"><a href="#">Min ønskeliste</a></li>
         </ul>
       </nav>
-      <section className="user-list">
+
+      <section >
         {users.map((user, i) => (
-          <article key={i} className="user-card">
-            <h2 className="user-card-name">{user.name}</h2>
+          <article key={i} className="bruker-kort">
+            <h2 className="bruker-navn">{user.name}</h2>
             {user.profileImage && (
-              <img src={user.profileImage.asset.url} className="user-card-image"/>
+              <img src={user.profileImage.asset.url} width="300" height="300" className="bruker-profilbilde"/>
             )}
-            <p className="user-card-p">Alder: {user.age}</p>
-            <p className="user-card-p">Kjønn: {user.gender}</p>
-            <section className="user-card-wishlist">
-                <h3 className="user-card-h3">Ønskeliste</h3>
+            <p className="bruker-alder">Alder: {user.age}</p>
+            <p className="bruker-kjonn">Kjønn: {user.gender}</p>
+
+            
+
+            
+
+            <section className="onskelitse-seksjon">
+              <section className="arrangmant-rad1">
                 {user.wishlist.map((event, j) => (
                   <EventLink key={j} festival={event} />
                 ))}
+              </section>
             </section>
-            <section className="user-card-purchases">
-              <h3 className="user-card-h3">Kjøp</h3>
+
+            <section className="kjop-seksjon">
+              <section className="arrangment-rad2">
                 {user.previousPurchases.map((event, j) => (
                   <EventLink key={j} festival={event} />
                 ))}
+              </section>
             </section>
           </article>
         ))}
       </section>
-      <section>
+
+      <section className="logout-section">
         <button onClick={onLogout} className="logout-button">Logg ut</button>
       </section>
     </section>
