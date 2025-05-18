@@ -1,5 +1,5 @@
 
-section {
+article {
     display: flex;
     flex-direction: row;
     max-width: 1800px;
@@ -7,7 +7,7 @@ section {
     justify-content: space-around;
 }
 
-article {
+div {
     padding: 1rem;
 }
 

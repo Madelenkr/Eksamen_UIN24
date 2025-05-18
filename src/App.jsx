@@ -7,7 +7,6 @@ import EventPage from './components/EventPage'
 import CategoryPage from './components/CategoryPage'
 import Dashboard from './components/Dashboard'
 import Layout from './components/Layout'
-import SanityEventDetails from './components/SanityEventDetails';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,8 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="event/:id" element={<EventPage />} />
         <Route path="/category/:slug" element={<CategoryPage />} />
-        <Route path="dashboard"element={<Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path="/sanity-event/:id" element={<SanityEventDetails />} />
+        <Route path="dashboard"element={<Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}/>
       </Routes>
     </Layout>
     
