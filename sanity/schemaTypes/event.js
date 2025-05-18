@@ -12,7 +12,6 @@ export const event = {
       title: 'Event title',
       //Data typen tekst
       type: 'string', 
-      type: 'string',
     },
     {
       name: 'apiId',

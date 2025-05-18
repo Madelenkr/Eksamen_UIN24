@@ -7,6 +7,7 @@ import Layout from "./Layout"; // Importer Layout inn i EventPage. Selvom den er
 export default function SanityEventPage() {
 const { id } = useParams(); //Henter id fra URLen
 const [ event, setEvent ] = useState(null);
+const [relatedUsers, setRelatedUsers] = useState([]);
 
 
   //Henter data fra APIen ved hjelp av id fra URLen
@@ -18,6 +19,38 @@ const [ event, setEvent ] = useState(null);
             console.error("feil under henting fra API", error) //Feilmelding
           );
       }, [id]); //Legger til id som avhengighet for å oppdatere data når id endres
+
+
+  // Hent brukere fra Sanity
+  useEffect(() => {
+    if (!id) return;
+
+    // Først: finn event-dokumentet med riktig apiId
+    const query = `*[_type == "event" && apiId == "${id}"][0]._id`;
+
+    fetch(`https://eqbspp1a.api.sanity.io/v1/data/query/production?query=${encodeURIComponent(query)}`)
+      .then((res) => res.json())
+      .then(({ result: eventRefId }) => {
+        if (!eventRefId) return;
+
+        const userQuery = `*[_type == "user" && (
+          "${eventRefId}" in wishlist[]._ref || "${eventRefId}" in previousPurchases[]._ref
+        )] {
+          _id,
+          name,
+          username
+        }`;
+
+        return fetch(`https://eqbspp1a.api.sanity.io/v1/data/query/production?query=${encodeURIComponent(userQuery)}`);
+      })
+      .then(res => res?.json())
+      .then(data => {
+        if (data?.result) {
+          setRelatedUsers(data.result);
+        }
+      })
+      .catch(error => console.error("Feil ved henting av brukere", error));
+  }, [id]);
 
   return (
     <>
@@ -32,6 +65,18 @@ const [ event, setEvent ] = useState(null);
             <p className="sanity-event-p">Plass: {event?._embedded?.venues?.[0]?.name}</p>
         </article>
     </section>
+    <section className="user-list-section">
+        <h3>Brukere med dette arrangementet</h3>
+        {relatedUsers.length === 0 ? (
+          <p>Ingen brukere har dette arrangementet på ønskelisten eller som tidligere kjøp.</p>
+        ) : (
+          <ul>
+            {relatedUsers.map((user) => (
+              <li key={user._id}>{user.name} ({user.username})</li>
+            ))}
+          </ul>
+        )}
+      </section>
     </>
   );
 }
