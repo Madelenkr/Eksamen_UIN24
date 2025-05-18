@@ -26,14 +26,14 @@ export default function ArtistCard({ artists }) {
 
  //vise frem hver unik artist i en artikkel  
   return (
-    <article className="artist-card">
+    <section className="artist-card">
         {filterPushArtist.map(artist => (
-            <div key={artist.id}>
+            <article key={artist.id}>
                 <img src={artist.images?.[0]?.url} className="artist-image"/>
                 <h3 className="artist-name">{artist?.name}</h3>
-            </div>
+            </article>
         ))};
-    </article> 
+    </section> 
 );
   
 };
