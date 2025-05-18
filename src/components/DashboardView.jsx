@@ -17,16 +17,8 @@ export default function DashboardView({ username, onLogout }) {
         setUsers( await Promise.all (userData.map(async (user) => {
             const fetchEvents = async (eventList) => 
             Promise.all((eventList || []).map(async (event) => {
-              //Med try-catch blok for å håndteree feil melding så vi ungår å stoppe koden eller få feil melding. 
-                try{ 
-                    // Henter eventdetaljer fra Ticketmaster API
-                    const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events/${event.apiId}.json?apikey=${apiKey}`);
-                    const data = await response.json();
-                    return {id: event.apiId, name: data.name || event.event, description: event.description, images: data.images ||[]};
-                }catch{
                    // Hvis hentingen feiler, så brukes data fra Sanity
                   return {id: event.apiId, name: event.event, description: event.description , images: []};
-                }
             }));
             return {
                 ...user,
