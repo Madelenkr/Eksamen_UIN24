@@ -75,6 +75,11 @@ input:focus{
     align-items: center;
 }
 
+.login-h2 {
+    font-size: 30px;
+    padding-top: 40px;
+}
+
 .dashboard-title {
     position: absolute;
     top: -1%;
@@ -123,7 +128,7 @@ input:focus{
 
 .user-card-image {
     height: 200px;
-    width: 800px;
+    width: 200px;
 }
 
 .user-card-p {
