@@ -15,6 +15,7 @@ export default function LoginForm({ onLogin }) {
 
             <form className= "login-form" onSubmit={handleSubmit}>
                 <label className="form-label">
+                    Brukernavn
                     <input className='form-input'
                     type="text" 
                     name="username"
@@ -26,6 +27,7 @@ export default function LoginForm({ onLogin }) {
                 </label>
 
                 <label className="form-label">
+                    Passord
                     <input className='form-input'
                     type="password"  
                     id="password" 
